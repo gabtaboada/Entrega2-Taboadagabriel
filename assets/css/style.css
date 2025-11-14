@@ -1,54 +1,94 @@
-*{/* RESET CSS*/
-   
+* {
+    /* RESET CSS*/
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-body{
+body {
     background-color: #e6d8fe;
     font-family: "Roboto", sans-serif;
 }
+
 /* HEADER */
-header{
-    margin-bottom: 20px;
+header {
+    /* margin-bottom: 20px; */
     padding: 20px;
     background-color: #e2cef0;
 }
-header a{
+
+header a {
     text-decoration: none;
     text-transform: uppercase;
-    
+
 }
-.navbar-nav .nav-link{
+
+.navbar-nav .nav-link {
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 16px;
 }
+
 .navbar-nav .nav-link:hover {
     color: #7c2872;
 }
-.navbar-nav .activo{
+
+.navbar-nav .activo {
     color: #7c2872;
 }
-header .navbar-brand img{
-    width:150px;
-}
-/* FOOTER */ 
 
-footer{
+header .navbar-brand img {
+    width: 150px;
+}
+
+/* FOOTER */
+
+footer {
     margin-top: 20px;
-    padding: 20px;
+    padding: 10px;
     background-color: #3c3c3c;
     color: white;
 }
-footer h4{
-    margin-top: 10px;
-    margin-bottom: 20px;
+
+footer h6 {
+    /* margin-top: 10px; */
+    padding: 10px;
+    border-bottom: 1px solid rgba(93, 93, 93, 0.763);    
 }
-.footer-columna{
+
+footer .container .row .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3fr 1fr;     */
+}
+
+footer .container .row .footer .columna {
+    padding: 10px;
+    /* border: 1px solid white; */
+    align-items: flex-start;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.p-footer{
+    /* text-transform: capitalize; */
+    margin-bottom: 5px
+}
+.p-footer a{
+    text-decoration: none;
+    color: white;
+}
+.p-footer i{
+    color: rgb(144, 142, 142);
+    margin-right: 5px;
+    font-size: 16px;
+}
+/* .footer-columna{
     margin-top: 10px;
     width: 25%;
 }
@@ -64,73 +104,92 @@ footer h4{
 }
 .footer-columna p{
     font-size: 13px;
-}
-.copyright p{
+} */
+.copyright p {
     font-size: 13px;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
 }
-.newsletter input{
+
+.newsletter input {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
     height: 35px;
     text-align: center;
 }
-.boton-news{
+
+.boton-news {
     background-color: #502899;
-    color:white;
+    color: white;
 }
+
 /* MAIN */
-h1{
+h1 {
     margin: 20px;
 }
-.mas-info{
+
+.mas-info {
     background-color: #502899;
     height: 30px;
     width: 80px;
     margin: 20px;
 }
-.mas-info a{
+
+.mas-info a {
     color: white;
     text-decoration: none;
 }
-.banner{
-   /* background-image: url(../img/banner-destinos.jpg);*/
-   margin-bottom: 20px;
+
+.banner {
+    /* background-image: url(../img/banner-destinos.jpg);*/
+    margin-bottom: 20px;
 }
-.columna-1{
+
+.columna-1 {
     width: 80%;
-    margin:20px;
-}
-/* INDEX */
-.destinosDestacados h2,p{
     margin: 20px;
 }
 
+/* INDEX */
+/*  REVISAR PORQUE MODIFICA EL FOOTER 
+
+.destinosDestacados h2,p {
+    margin: 20px;
+} */
+
 /* DESTINOS */
-.columna-3{
+.columna-3 {
     margin: 20px;
 }
+
 /* PROMOCIONES */
-.columna-2{
+.columna-2 {
     margin: 20px;
 }
+
 /* CONTACTO */
-.datosContacto{
+.datosContacto {
     margin: 20px;
 }
-.datosContacto p{
+
+.datosContacto p {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.datosContacto h3{
+
+.datosContacto h3 {
     text-transform: uppercase;
 }
-.formulario{
+
+.formulario {
     background-color: #cbb3f3;
     width: 400px;
     margin-left: 20px;
 }
-.formulario input{
+
+.formulario input {
     text-align: left;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -138,13 +197,38 @@ h1{
     height: 35px;
     text-align: center;
 }
-.formulario-label{
+
+.formulario-label {
     margin: 10px;
     font-size: 12px;
     font-style: italic;
 }
-.formulario textarea{
+
+.formulario textarea {
     width: 100%;
     height: 100px;
     padding: 10px;
+}
+
+/*DESKTOP FIRST*/
+@media (max-width: 991px) {
+    footer .container .row .footer {
+        flex-direction: column;
+        /* grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 3fr 1fr;     */
+    }
+    footer .container .row .footer .columna {
+        border-top: 1px solid rgba(93, 93, 93, 0.763);
+        margin-left: 10px;
+    }
+    footer h6 {
+        /* margin-top: 10px; */
+        /* margin-bottom: 20px; */
+        border-bottom:none  
+    }
+}
+
+/* 360 a 480pxmobile */
+@media (max-width:480px) {
+
 }
