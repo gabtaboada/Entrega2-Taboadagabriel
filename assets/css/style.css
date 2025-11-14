@@ -15,22 +15,28 @@ body{
 header{
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #d8a3fd;;
+    background-color: #e2cef0;
 }
 header a{
     text-decoration: none;
     text-transform: uppercase;
     
 }
-nav ul {
-    list-style-type: none;
-  
-}
-.nav-li{
-    margin: 20px;
-
+.navbar-nav .nav-link{
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 16px;
 }
 
+.navbar-nav .nav-link:hover {
+    color: #7c2872;
+}
+.navbar-nav .activo{
+    color: #7c2872;
+}
+header .navbar-brand img{
+    width:150px;
+}
 /* FOOTER */ 
 
 footer{

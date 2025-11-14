@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <title>Traveling - Turismo | Tu próxima aventura comienza aqui</title>
 </head>
+
 <body>
     <!-- Header - Logo + Menu de navegacion -->
     <header>
-        <div>
-            <a href="./index.html"> <img src="./assets/img/logo.png" alt="Imagen logo traveling turismo" width="200px;">
-            </a>
-        </div>
-        <div>
-            <nav>
-                <ul >
-                    <li clas="nav-li"><a href="#">inicio</a></li>
-                    <li><a href="./pages/nosotros.html">nosotros</a></li>
-                    <li><a href="./pages/destinos.html">destinos</a></li>
-                    <li><a href="./pages/promociones.html">promociones</a></li>
-                    <li><a href="./pages/contacto.html">contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="#"><img src="assets/img/logo.png" alt="Logo traveling turismo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link activo" aria-current="page" href="#">Inicio</a>
+                        <a class="nav-link ext-light" href="./pages/nosotros.html">Nosotros</a>
+                        <a class="nav-link ext-light" href="./pages/destinos.html">Destinos </a>
+                                <a class="nav-link ext-light" href="./pages/promociones.html">Promociones</a>
+                                <a class="nav-link ext-light" href="./pages/contacto.html">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header><!-- Fin header -->
     <main>
         <!-- Seccion slider principal -->
@@ -40,7 +48,8 @@
                     <div>
                         <h3>Titulo slider 1</h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the
                         </p>
                     </div>
                     <div class="mas-info">
@@ -54,9 +63,10 @@
                     <div>
                         <h3>Titulo slider 2</h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the
                         </p>
-                    </div>                    
+                    </div>
                     <div class="mas-info">
                         <a href="#">Mas info</a>
                     </div>
@@ -68,21 +78,22 @@
                     <div>
                         <h3>Titulo slider 3</h3>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the
                         </p>
-                    </div>                    
+                    </div>
                     <div class="mas-info">
                         <a href="#">Mas info</a>
                     </div>
-                </div>                
+                </div>
             </div>
         </section><!-- fin slider principal -->
         <!-- Seccion Destinos destacados -->
         <section>
             <div class="destinosDestacados">
                 <h2>Destinos destacados</h2>
-                <p>Descubrí experiencias únicas pensadas para que vivas cada destino de una forma diferente. 
-    Desde escapadas cortas hasta grandes aventuras, elegí el viaje que mejor se adapte a vos.</p>
+                <p>Descubrí experiencias únicas pensadas para que vivas cada destino de una forma diferente.
+                    Desde escapadas cortas hasta grandes aventuras, elegí el viaje que mejor se adapte a vos.</p>
                 <div class="columna-3">
                     <img src="./assets/img/capadocia.jpg" alt="Foto capadocia Turquia" width="30%">
                     <div class="mas-info">
@@ -94,13 +105,13 @@
                     <div class="mas-info">
                         <a href="./pages/destinos.html">Mas info</a>
                     </div>
-                </div> 
+                </div>
                 <div class="columna-3">
                     <img src="./assets/img/londres.jpg" alt="Foto Dubai" width="30%">
                     <div class="mas-info">
                         <a href="./pages/destinos.html">Mas info</a>
                     </div>
-                </div> 
+                </div>
             </div>
         </section>
     </main>
@@ -118,7 +129,7 @@
             <h4>Contáctanos</h4>
             <p><i class="fa-brands fa-whatsapp"></i> +549999999</p>
             <p><i class="fa-regular fa-envelope"></i> travelingturismo@traveling.com.ar</p>
-            <p><i class="fa-solid fa-location-dot"></i> Mi ubicación</p> 
+            <p><i class="fa-solid fa-location-dot"></i> Mi ubicación</p>
         </div>
         <div class="footer-columna"><!--Suscribirse al newsletter-->
             <h4>Recibi todas las novedades</h4>
@@ -128,7 +139,7 @@
                     <input type="button" class="boton-news" value="Suscribirse">
                 </form>
             </div>
-            
+
         </div>
         <div class="footer-columna"><!-- Redes sociales -->
             <h4>Seguinos en redes</h4>
@@ -136,12 +147,16 @@
                 <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> instagram</a></li>
                 <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i> facebook</a></li>
                 <li><a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i>
-                tiktok</a></li>
+                        tiktok</a></li>
             </ul>
         </div>
         <div class="copyright">
             <p>2025@Todos los derechos reservados. Gabriel Taboada</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
