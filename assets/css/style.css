@@ -201,7 +201,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 .columna-Promociones img{
     width: 100%;
@@ -326,6 +326,9 @@ h1 {
         /* margin-bottom: 20px; */
         border-bottom:none
     }
+    .columna-Promociones img{
+        width: 70%;
+    }      
 }
 
 /* 360 a 480pxmobile */
