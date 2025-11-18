@@ -45,6 +45,12 @@ header .navbar-brand img {
     width: 150px;
 }
 
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem #7c2872;
+    border-color: #7c2872;
+
+}
+
 /* FOOTER */
 
 footer {
@@ -75,19 +81,23 @@ footer .container .row .footer .columna {
     font-size: 14px;
     margin-left: 10px;
 }
-.p-footer{
+
+.p-footer {
     /* text-transform: capitalize; */
     margin-bottom: 5px
 }
-.p-footer a{
+
+.p-footer a {
     text-decoration: none;
     color: white;
 }
-.p-footer i{
+
+.p-footer i {
     color: rgb(144, 142, 142);
     margin-right: 5px;
     font-size: 16px;
 }
+
 /* .footer-columna{
     margin-top: 10px;
     width: 25%;
@@ -145,11 +155,33 @@ h1 {
 .banner {
     /* background-image: url(../img/banner-destinos.jpg);*/
     margin-bottom: 20px;
+    position: relative;
+}
+
+/* .banner .bg-opacidad:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(10, 10, 10, 0.705); 
+    z-index:1;  
+} */
+.banner img {
+    width: 100%;
+    z-index: 0;
 }
 
 .columna-1 {
-    width: 80%;
+    width: 100%;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nosotros h3{
+    text-transform: uppercase;
 }
 .carousel-indicators [data-bs-slide-to] {
     width: 12px;
@@ -159,36 +191,42 @@ h1 {
     background-color: #502899;
 }
 
-.carousel-control-prev{
+.carousel-control-prev {
     color: #4d0945;
 }
 
 .carousel-indicators [data-bs-slide-to]:hover {
     background-color: #7946d7;
 }
-#BotonMasInfo{
+
+#BotonMasInfo {
 
     border: 2px solid #502899;
     color: white;
     background-color: #270e558a;
 }
-#BotonMasInfo:hover{
+
+#BotonMasInfo:hover {
     background-color: #50289992;
 }
-.grillaIndex{
+
+.grillaIndex {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     /* border: 2px solid black; */
 }
-.grillaIndex div{
+
+.grillaIndex div {
     /* border: 2px solid black; */
 }
-.grillaIndex div img{
+
+.grillaIndex div img {
     /* border: 2px solida rgb(71, 1, 55); */
     width: 100%;
 }
+
 .columna-3 {
     position: relative;
     display: flex;
@@ -196,6 +234,7 @@ h1 {
     justify-content: center;
     /* border: 2px solid black; */
 }
+
 .columna-Promociones {
     position: relative;
     display: flex;
@@ -203,14 +242,17 @@ h1 {
     justify-content: center;
     /* border: 2px solid black; */
 }
-.columna-Promociones img{
+
+.columna-Promociones img {
     width: 100%;
 }
-.columna-Promociones .mas-info{
+
+.columna-Promociones .mas-info {
 
     position: absolute;
     bottom: 15px;
-} 
+}
+
 /* .columna-3:hover::after{
     content: "";
     width: 100%;
@@ -221,10 +263,11 @@ h1 {
     z-index: 0;
     background-color: rgba(21, 19, 19, 0.327);    
 } */
-.columna-3 img{
+.columna-3 img {
     width: 100%;
 }
-.columna-3 .mas-info{
+
+.columna-3 .mas-info {
     /* background-color: #502899;
     height: 30px;
     width: 80px; */
@@ -233,17 +276,20 @@ h1 {
     /* padding: 16px; */
     position: absolute;
     /* al hacer esto, la unica referencia que toma es el body*/
-    bottom: 15px;/*
+    bottom: 15px;
+    /*
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px; */
 }
-.titulo{
+
+.titulo {
     display: flex;
     justify-content: center;
     margin: 20px 0;
 }
+
 /* .promociones-destacadas{
     margin:0 20;
 
@@ -308,33 +354,37 @@ h1 {
 
 /*DESKTOP FIRST*/
 @media (max-width: 991px) {
-    .grillaIndex{
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(3,1fr);
+    .grillaIndex {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
+
     footer .container .row .footer {
         flex-direction: column;
         /* grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 3fr 1fr;     */
     }
+
     footer .container .row .footer .columna {
         border-top: 1px solid rgba(93, 93, 93, 0.763);
         margin-left: 10px;
     }
+
     footer h6 {
         /* margin-top: 10px; */
         /* margin-bottom: 20px; */
-        border-bottom:none
+        border-bottom: none
     }
-    .columna-Promociones img{
+
+    .columna-Promociones img {
         width: 70%;
-    }      
+    }
 }
 
 /* 360 a 480pxmobile */
 @media (max-width:480px) {
-    .grillaIndex{
-        grid-template-columns: repeat(1,1fr);
-        grid-template-rows: repeat(6,1fr);
+    .grillaIndex {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
     }
 }
