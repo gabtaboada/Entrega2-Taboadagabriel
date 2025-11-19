@@ -11,7 +11,8 @@
 
 body {
     background-color: #e6d8fe;
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: "Montserrat", sans-serif;
 }
 
 /* HEADER */
@@ -130,11 +131,27 @@ footer .container .row .footer .columna {
     text-align: center;
 }
 
-.boton-news {
+/* .boton-news {
     background-color: #502899;
     color: white;
+} */
+.boton-news {
+    width: 100%;
+    padding: 5px 15px;
+    font-size: 16px;
+    /* font-weight: 600; */
+    color: white;
+    background: #502899;
+    border: 2px solid #502899;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.boton-news:hover {
+    background: #50289960;
+    color: #fff;
+}
 /* MAIN */
 h1 {
     margin: 20px;
@@ -351,7 +368,47 @@ h1 {
 .columna-2 {
     margin: 20px;
 }
-
+.card .fondo-opacidad{
+    background-color: #1313136d;
+}
+section .grilla-promociones{
+    display: grid;
+    grid-template-columns: repeat(3,1fr); 
+    grid-template-rows: repeat(1,1fr);
+    /* height: 100vh; */
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+    
+}
+section .grilla-promociones div{
+    position: relative;
+    /* border:  2px solid black; */
+    display: flex;
+    justify-content:center;
+    
+}
+section .grilla-promociones img{
+    width: 100%;
+}
+section .grilla-promociones div p{
+    width: auto;
+    position: absolute;
+    /* top:calc(50% - 19px); */
+    top: 20px;
+    /* left: calc(50% - 46px); */
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+    /* z-index: 2;
+    opacity: 0; */
+}
+section .grilla-promociones div .mas-info{
+    position: absolute;
+    bottom: 20px;
+    /* top:calc(50% - 19px);
+    left: calc(50% - 46px); */
+}
 /* CONTACTO */
 form label {
     display: block;
@@ -514,6 +571,16 @@ input[aria-invalid="true"] {
     .columna-mapa{
         border-top: 1px solid rgba(93, 93, 93, 0.763);
     }
+    /* PROMOCIONES*/
+    section .grilla-promociones{
+        grid-template-rows: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+    section .grilla-promociones img{
+        width: 100%;
+
+    }    
 }
 
 /* 360 a 480pxmobile */
@@ -525,6 +592,15 @@ input[aria-invalid="true"] {
 
     /*DESTINOS*/
     .destinos .grilla-destinos img {
-        width: 100%;
+        width: 60%;
     }
+    /*PROMOCIONES*/
+    section .grilla-promociones{
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(1,1fr);
+        
+    }    
+    section .grilla-promociones div p{
+        top:calc(50% - 40px);
+    }    
 }
