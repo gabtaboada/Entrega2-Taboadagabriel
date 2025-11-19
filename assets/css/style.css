@@ -334,7 +334,15 @@ h1 {
 .destinos p {
     font-family: "Montserrat", sans-serif;
 }
-
+.carousel-control-prev-icon{
+    color: #502899;
+}
+.carousel-icono-anterior img{
+    width: 40px;
+}
+.carousel-icono-siguiente img{
+    width: 40px;
+}
 /* .columna-3 {
     margin: 20px;
 } */
