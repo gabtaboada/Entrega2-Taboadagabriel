@@ -10,16 +10,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-    background-color: #e6d8fe;
+    /* background-color: #e6d8fe; */
+     background-color: #ffffff;
     /* font-family: "Roboto", sans-serif; */
     font-family: "Montserrat", sans-serif;
 }
-
+h1 {
+    border-bottom: 1px solid rgba(69, 69, 69, 0.195);
+    padding-bottom: 10px;
+}
 /* HEADER */
 header {
     /* margin-bottom: 20px; */
     padding: 20px;
-    background-color: #e2cef0;
+    /* background-color: #e2cef0; */
+    background-color: #f4eaff;
+    
 }
 
 header a {
@@ -48,10 +54,15 @@ header .navbar-brand img {
 
 .navbar-toggler:focus {
     box-shadow: 0 0 0 0.2rem #7c2872;
-    border-color: #7c2872;
+    border-color:#4d094529
 
 }
-
+.navbar-toggler{
+    /* border: 1px solid #7c2872; */
+}
+.navbar-toggler-icon{
+    background-image: url(../img/menu.png);
+}
 /* FOOTER */
 
 footer {
@@ -98,24 +109,6 @@ footer .container .row .footer .columna {
     margin-right: 5px;
     font-size: 16px;
 }
-
-/* .footer-columna{
-    margin-top: 10px;
-    width: 25%;
-}
-.footer-columna li{
-    margin: 10px;
-    font-size: 13px;
-    list-style-type: none;
-
-}
-.footer-columna a{
-    text-decoration: none;
-    color: #aaaaaa;
-}
-.footer-columna p{
-    font-size: 13px;
-} */
 .copyright p {
     font-size: 13px;
     /* border: 1px solid green; */
@@ -170,21 +163,10 @@ h1 {
 }
 
 .banner {
-    /* background-image: url(../img/banner-destinos.jpg);*/
     margin-bottom: 20px;
     position: relative;
 }
 
-/* .banner .bg-opacidad:before{
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(10, 10, 10, 0.705); 
-    z-index:1;  
-} */
 .banner img {
     width: 100%;
     z-index: 0;
@@ -219,7 +201,7 @@ h1 {
 }
 
 #BotonMasInfo {
-
+    border-radius: 100px;
     border: 2px solid #502899;
     color: white;
     background-color: #270e558a;
@@ -251,6 +233,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     /* border: 2px solid black; */
 }
 
@@ -261,46 +244,40 @@ h1 {
     justify-content: center;
     /* border: 2px solid black; */
 }
-
 .columna-Promociones img {
     width: 100%;
+    border-radius: 10px;
 }
 
 .columna-Promociones .mas-info {
-
     position: absolute;
     bottom: 15px;
 }
 
-/* .columna-3:hover::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+.columna-Promociones p{
     position: absolute;
-    z-index: 0;
-    background-color: rgba(21, 19, 19, 0.327);    
-} */
+    color: white;
+    top: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    z-index: 2;
+}
+
 .columna-3 img {
     width: 100%;
+    border-radius: 10px;
 }
-
-.columna-3 .mas-info {
-    /* background-color: #502899;
-    height: 30px;
-    width: 80px; */
-
-    /* margin: 20px; */
-    /* padding: 16px; */
+.columna-3 p {
     position: absolute;
-    /* al hacer esto, la unica referencia que toma es el body*/
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+}
+.columna-3 .mas-info {
+    position: absolute;
     bottom: 15px;
-    /*
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px; */
 }
 
 .titulo {
@@ -332,16 +309,22 @@ h1 {
 }
 
 .destinos .grilla-destinos img {
+    border-radius: 10px;
     width: 100%;
 }
 
 .destinos .grilla-destinos .caja {
     width: 100%;
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
-
+.destinos .grilla-destinos .caja p{
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+}
 .destinos h5 {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
@@ -389,6 +372,7 @@ section .grilla-promociones div{
     
 }
 section .grilla-promociones img{
+    border-radius: 10px;
     width: 100%;
 }
 section .grilla-promociones div p{
@@ -463,6 +447,7 @@ input[aria-invalid="true"] {
 }
 
 .boton-enviar {
+    width: 100%;
     padding: 12px 35px;
     font-size: 16px;
     font-weight: 600;
@@ -470,8 +455,6 @@ input[aria-invalid="true"] {
     background: transparent;
     border: 2px solid #502899;
     border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .boton-enviar:hover {
@@ -553,10 +536,9 @@ input[aria-invalid="true"] {
         border-bottom: none
     }
 
-    .columna-Promociones img {
-        width: 70%;
+    .columna-Promociones p{
+        font-size: 24px;
     }
-
     /*DESTINOS*/
     .destinos .grilla-destinos {
         grid-template-rows: repeat(3, 1fr);
@@ -565,7 +547,7 @@ input[aria-invalid="true"] {
     }
 
     .destinos .grilla-destinos img {
-        width: 70%;
+        width: 100%;
     }
     /* CONTACTO*/
     .columna-mapa{
@@ -592,7 +574,7 @@ input[aria-invalid="true"] {
 
     /*DESTINOS*/
     .destinos .grilla-destinos img {
-        width: 60%;
+        width: 100%;
     }
     /*PROMOCIONES*/
     section .grilla-promociones{
