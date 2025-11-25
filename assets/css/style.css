@@ -11,21 +11,23 @@
 
 body {
     /* background-color: #e6d8fe; */
-     background-color: #ffffff;
+    background-color: #ffffff;
     /* font-family: "Roboto", sans-serif; */
     font-family: "Montserrat", sans-serif;
 }
+
 h1 {
     border-bottom: 1px solid rgba(69, 69, 69, 0.195);
     padding-bottom: 10px;
 }
+
 /* HEADER */
 header {
     /* margin-bottom: 20px; */
     padding: 20px;
     /* background-color: #e2cef0; */
     background-color: #f4eaff;
-    
+
 }
 
 header a {
@@ -54,15 +56,17 @@ header .navbar-brand img {
 
 .navbar-toggler:focus {
     box-shadow: 0 0 0 0.2rem #7c2872;
-    border-color:#4d094529
-
+    border-color: #4d094529
 }
-.navbar-toggler{
+
+.navbar-toggler {
     /* border: 1px solid #7c2872; */
 }
-.navbar-toggler-icon{
+
+.navbar-toggler-icon {
     background-image: url(../img/menu.png);
 }
+
 /* FOOTER */
 
 footer {
@@ -109,6 +113,7 @@ footer .container .row .footer .columna {
     margin-right: 5px;
     font-size: 16px;
 }
+
 .copyright p {
     font-size: 13px;
     /* border: 1px solid green; */
@@ -145,6 +150,7 @@ footer .container .row .footer .columna {
     background: #50289960;
     color: #fff;
 }
+
 /* MAIN */
 h1 {
     margin: 20px;
@@ -244,6 +250,7 @@ h1 {
     justify-content: center;
     /* border: 2px solid black; */
 }
+
 .columna-Promociones img {
     width: 100%;
     border-radius: 10px;
@@ -254,7 +261,7 @@ h1 {
     bottom: 15px;
 }
 
-.columna-Promociones p{
+.columna-Promociones p {
     position: absolute;
     color: white;
     top: 10px;
@@ -268,6 +275,7 @@ h1 {
     width: 100%;
     border-radius: 10px;
 }
+
 .columna-3 p {
     position: absolute;
     color: white;
@@ -275,6 +283,7 @@ h1 {
     font-size: 24px;
     font-weight: 400;
 }
+
 .columna-3 .mas-info {
     position: absolute;
     bottom: 15px;
@@ -320,11 +329,13 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-.destinos .grilla-destinos .caja p{
+
+.destinos .grilla-destinos .caja p {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-weight: 400;
 }
+
 .destinos h5 {
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
@@ -334,15 +345,19 @@ h1 {
 .destinos p {
     font-family: "Montserrat", sans-serif;
 }
-.carousel-control-prev-icon{
+
+.carousel-control-prev-icon {
     color: #502899;
 }
-.carousel-icono-anterior img{
+
+.carousel-icono-anterior img {
     width: 40px;
 }
-.carousel-icono-siguiente img{
+
+.carousel-icono-siguiente img {
     width: 40px;
 }
+
 /* .columna-3 {
     margin: 20px;
 } */
@@ -351,31 +366,36 @@ h1 {
 .columna-2 {
     margin: 20px;
 }
-.card .fondo-opacidad{
+
+.card .fondo-opacidad {
     background-color: #1313136d;
 }
-section .grilla-promociones{
+
+section .grilla-promociones {
     display: grid;
-    grid-template-columns: repeat(3,1fr); 
-    grid-template-rows: repeat(1,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     /* height: 100vh; */
     gap: 20px;
     justify-content: center;
     align-content: center;
-    
+
 }
-section .grilla-promociones div{
+
+section .grilla-promociones div {
     position: relative;
     /* border:  2px solid black; */
     display: flex;
-    justify-content:center;
-    
+    justify-content: center;
+
 }
-section .grilla-promociones img{
+
+section .grilla-promociones img {
     border-radius: 10px;
     width: 100%;
 }
-section .grilla-promociones div p{
+
+section .grilla-promociones div p {
     width: auto;
     position: absolute;
     /* top:calc(50% - 19px); */
@@ -387,12 +407,14 @@ section .grilla-promociones div p{
     /* z-index: 2;
     opacity: 0; */
 }
-section .grilla-promociones div .mas-info{
+
+section .grilla-promociones div .mas-info {
     position: absolute;
     bottom: 20px;
     /* top:calc(50% - 19px);
     left: calc(50% - 46px); */
 }
+
 /* CONTACTO */
 form label {
     display: block;
@@ -414,12 +436,14 @@ form .email:after {
     font-style: italic;
     color: rgba(255, 0, 0, 0.632);
 }
+
 form .mensaje:after {
     content: "*(requerido)";
     font-size: 12px;
     font-style: italic;
     color: rgba(255, 0, 0, 0.632);
 }
+
 input,
 textarea {
     width: 100%;
@@ -536,9 +560,10 @@ input[aria-invalid="true"] {
         border-bottom: none
     }
 
-    .columna-Promociones p{
+    .columna-Promociones p {
         font-size: 24px;
     }
+
     /*DESTINOS*/
     .destinos .grilla-destinos {
         grid-template-rows: repeat(3, 1fr);
@@ -549,20 +574,23 @@ input[aria-invalid="true"] {
     .destinos .grilla-destinos img {
         width: 100%;
     }
+
     /* CONTACTO*/
-    .columna-mapa{
+    .columna-mapa {
         border-top: 1px solid rgba(93, 93, 93, 0.763);
     }
+
     /* PROMOCIONES*/
-    section .grilla-promociones{
-        grid-template-rows: repeat(1,1fr);
-        grid-template-columns: repeat(2,1fr);
-        
+    section .grilla-promociones {
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+
     }
-    section .grilla-promociones img{
+
+    section .grilla-promociones img {
         width: 100%;
 
-    }    
+    }
 }
 
 /* 360 a 480pxmobile */
@@ -576,13 +604,15 @@ input[aria-invalid="true"] {
     .destinos .grilla-destinos img {
         width: 100%;
     }
+
     /*PROMOCIONES*/
-    section .grilla-promociones{
-        grid-template-rows: repeat(3,1fr);
-        grid-template-columns: repeat(1,1fr);
-        
-    }    
-    section .grilla-promociones div p{
-        top:calc(50% - 40px);
-    }    
+    section .grilla-promociones {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    section .grilla-promociones div p {
+        top: calc(50% - 40px);
+    }
 }
