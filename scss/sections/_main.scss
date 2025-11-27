@@ -4,12 +4,6 @@
 @use '../utilities/maps' as mapa;
 @use '../utilities/mixin';
 
-/* En entrega 2 , creo que no se usa*/
-// .mas-info a {
-//     color: white;
-//     text-decoration: none;
-//  }
-
 .banner {
     margin-bottom: 20px;
     position: relative;
@@ -18,7 +12,6 @@
         z-index: 0;
     }
 }
-
 
 .columna-1 {
     width: 100%;
@@ -98,10 +91,6 @@
     }
     .mas-info {
         @include mixin.mas-info(absolute,15px);    
-        /*
-        position: absolute;
-        bottom: 15px;
-        */
     }
 }
 
@@ -115,10 +104,6 @@
     
     .mas-info {
         @include mixin.mas-info(absolute,15px);
-        /*
-        position: absolute;
-        bottom: 15px;
-        */
     }
     p {
         position: absolute;

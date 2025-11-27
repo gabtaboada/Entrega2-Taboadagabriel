@@ -103,10 +103,6 @@ footer .container .row .footer {
   justify-content: center;
   align-items: start;
   flex-direction: row;
-  /*
-  display: flex;
-  flex-direction: row;
-  justify-content: center;*/
 }
 footer .container .row .footer .columna {
   padding: 10px;
@@ -166,7 +162,6 @@ footer .container .row .footer .columna {
 
 /* FIN FOOTER */
 /* MAIN */
-/* En entrega 2 , creo que no se usa*/
 .banner {
   margin-bottom: 20px;
   position: relative;
@@ -257,10 +252,6 @@ footer .container .row .footer .columna {
 .columna-3 .mas-info {
   position: absolute;
   bottom: 15px;
-  /*
-  position: absolute;
-  bottom: 15px;
-  */
 }
 
 .columna-Promociones {
@@ -276,10 +267,6 @@ footer .container .row .footer .columna {
 .columna-Promociones .mas-info {
   position: absolute;
   bottom: 15px;
-  /*
-  position: absolute;
-  bottom: 15px;
-  */
 }
 .columna-Promociones p {
   position: absolute;
@@ -306,11 +293,6 @@ footer .container .row .footer .columna {
   align-items: center;
   grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(3, 1fr);
-  /* border: 2px solid black; 
-  justify-content: center;
-  align-items: center;
-  //display: grid;
-  */
   gap: 20px;
 }
 .destinos .grilla-destinos img {
@@ -322,11 +304,6 @@ footer .container .row .footer .columna {
   display: flex;
   justify-content: center;
   align-items: center;
-  /*
-  display: flex;
-  justify-content: center;
-  align-items: center;   
-  */
   flex-direction: column;
 }
 .destinos .grilla-destinos .caja p {
@@ -363,7 +340,6 @@ section .grilla-promociones {
 }
 section .grilla-promociones div {
   position: relative;
-  /* border:  2px solid black; */
   display: flex;
   justify-content: center;
 }
@@ -378,10 +354,6 @@ section .grilla-promociones div p {
 section .grilla-promociones div .mas-info {
   position: absolute;
   bottom: 20px;
-  /*
-  position: absolute;
-  bottom: 20px;
-  */
 }
 section .grilla-promociones img {
   border-radius: 10px;

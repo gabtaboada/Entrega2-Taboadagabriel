@@ -20,7 +20,6 @@ section{
         align-content: center;
         div {
             position: relative;
-            /* border:  2px solid black; */
             display: flex;
             justify-content: center;
             p {
@@ -33,10 +32,6 @@ section{
             }
             .mas-info {
                 @include mixin.mas-info(absolute,20px);                
-                /*
-                position: absolute;
-                bottom: 20px;
-                */
             }
         }
         img {

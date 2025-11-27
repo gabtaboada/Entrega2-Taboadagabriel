@@ -7,22 +7,16 @@ footer {
     margin-top: 20px;
     padding: 10px;
     background-color: map.get(mapa.$colores,color-footer-fondo);
-    //background-color: #3c3c3c;
     color: map.get(mapa.$colores,color-secundario);
         h6 {
         padding: 10px;
         border-bottom: map.get(mapa.$colores,color-footer-border);
-        //border-bottom: 1px solid rgba(93, 93, 93, 0.763);
     }
     .container{
         .row{
             .footer{
                 @include mixin.flex-center(flex,center,start);
                 flex-direction: row;
-                /*
-                display: flex;
-                flex-direction: row;
-                justify-content: center;*/
                 .columna {
                     padding: 10px;
                     align-items: flex-start;
@@ -41,7 +35,6 @@ footer {
     }
     i {
         color: map.get(mapa.$colores,color-redes);
-        //color: rgb(144, 142, 142);
         margin-right: 5px;
         font-size: 16px;
     }    
@@ -51,8 +44,6 @@ footer {
     p {
         font-size: 13px;
         @include mixin.flex-center(flex,center,center);        
-        //display: flex;
-        //justify-content: center;
     }
 }
 .newsletter{
