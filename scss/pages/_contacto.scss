@@ -8,7 +8,7 @@ form {
         display: block;
         margin-bottom: 5px;
         font-weight: bold;
-        color: #333;
+        color:map.get(mapa.$colores,color-form-label);
     }
 
     .nombre {
@@ -34,7 +34,7 @@ input,
 textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid map.get(mapa.$colores, color-form-input);
     border-radius: 4px;
     font-size: 14px;
     box-sizing: border-box;
@@ -46,9 +46,8 @@ textarea {
     }
 }
 
-
 input[aria-invalid="true"] {
-    border-color: #dc3545;
+    border-color: map.get(mapa.$colores, color-form-invalid);
 }
 
 .boton-enviar {
@@ -58,12 +57,12 @@ input[aria-invalid="true"] {
     font-weight: 600;
     color: map.get(mapa.$colores, color-terciario);
     background: transparent;
-    border: 2px solid #502899;
+    border: 2px solid map.get(mapa.$colores, color-terciario);
     border-radius: 5px;
 
     &:hover {
         background: map.get(mapa.$colores, color-terciario);
-        color: #fff;
+        color : map.get(mapa.$colores, color-secundario);
     }
 }
 

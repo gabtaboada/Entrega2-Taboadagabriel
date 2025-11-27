@@ -67,7 +67,7 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     &:hover {
-        background: #50289960;
+        background: map.get(mapa.$colores,color-botonNews-hover);
         color: map.get(mapa.$colores,color-secundario);
     }
 }

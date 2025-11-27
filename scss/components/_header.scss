@@ -5,7 +5,7 @@
 
 header {
     padding: 20px;
-    background-color: #f4eaff;
+    background-color: map.get(mapa.$colores, color-background-header);
     a {
         text-decoration: none;
         text-transform: uppercase;
@@ -68,7 +68,7 @@ Antes de la animacion
 .navbar-toggler {
         &:focus {
         box-shadow: 0 0 0 0.2rem map.get(mapa.$colores,color-subrayado);
-        border-color: #4d094529;
+        border-color: map.get(mapa.$colores,color-nav-toggler-border);
     }
     
 }

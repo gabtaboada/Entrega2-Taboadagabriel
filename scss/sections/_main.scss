@@ -33,12 +33,12 @@
     margin: 0 5px;
     background-color: map.get(mapa.$colores,color-terciario);
     &:hover {
-        background-color: #7946d7;
+        background-color: map.get(mapa.$colores,color-carousel-button-hover);
     }
 }
 
 .carousel-control-prev {
-    color: #4d0945;
+    color: map.get(mapa.$colores,color-carousel-control-prev);
 }
 .carousel-control-prev-icon {
     color: map.get(mapa.$colores,color-terciario);
@@ -55,10 +55,10 @@
 #BotonMasInfo {
     border-radius: 100px;
     border: 2px solid map.get(mapa.$colores,color-terciario);
-    color: white;
-    background-color: #270e558a;
+    color:map.get(mapa.$colores,color-secundario);
+    background-color: map.get(mapa.$colores,color-botonInfo-fondo);
     &:hover {
-        background-color: #50289992;
+        background-color: map.get(mapa.$colores,color-botonInfo-hover);
     }
 }
 

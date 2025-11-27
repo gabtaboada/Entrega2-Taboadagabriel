@@ -8,9 +8,7 @@
 
 /* GENERALES */
 body {
-  /* background-color: #e6d8fe; */
   background-color: #ffffff;
-  /* font-family: "Roboto", sans-serif; */
   font-family: "Montserrat", sans-serif;
 }
 
@@ -214,7 +212,7 @@ footer .container .row .footer .columna {
 #BotonMasInfo {
   border-radius: 100px;
   border: 2px solid #502899;
-  color: white;
+  color: #ffffff;
   background-color: rgba(39, 14, 85, 0.5411764706);
 }
 #BotonMasInfo:hover {
@@ -326,10 +324,13 @@ footer .container .row .footer .columna {
   margin: 20px;
 }
 
-.card .fondo-opacidad {
-  background-color: rgba(19, 19, 19, 0.4274509804);
-}
-
+/* CREO QUE NO SE USA ESTE 
+.card{
+    .fondo-opacidad {
+        background-color: #1313136d;
+    }
+} 
+*/
 section .grilla-promociones {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -347,7 +348,7 @@ section .grilla-promociones div p {
   width: auto;
   position: absolute;
   top: 20px;
-  color: white;
+  color: #ffffff;
   font-size: 24px;
   text-transform: uppercase;
 }
@@ -407,7 +408,7 @@ input[aria-invalid=true] {
 }
 .boton-enviar:hover {
   background: #502899;
-  color: #fff;
+  color: #ffffff;
 }
 
 .mapa iframe {

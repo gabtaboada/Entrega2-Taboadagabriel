@@ -1,15 +1,18 @@
 /* PROMOCIONES */
 @use '../utilities/mixin';
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
 
 .columna-2 {
     margin: 20px;
 }
-
+/* CREO QUE NO SE USA ESTE 
 .card{
     .fondo-opacidad {
         background-color: #1313136d;
     }
 } 
+*/
 section{
     .grilla-promociones {
         display: grid;
@@ -26,7 +29,7 @@ section{
                 width: auto;
                 position: absolute;
                 top: 20px;
-                color: white;
+                color: map.get(mapa.$colores, color-secundario);
                 font-size: 24px;
                 text-transform: uppercase;
             }

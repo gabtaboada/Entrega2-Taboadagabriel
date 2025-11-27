@@ -1,4 +1,7 @@
 /*DESKTOP FIRST*/
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
+
 @media (max-width: 991px) {
     .grillaIndex {
         grid-template-columns: repeat(2, 1fr);
@@ -10,7 +13,7 @@
                 .footer{
                     flex-direction: column;
                     .columna {
-                        border-top: 1px solid rgba(93, 93, 93, 0.763);
+                        border-top: 1px solid map.get(mapa.$colores,color-footer-border);
                         margin-left: 10px;
                     }
                 }
@@ -39,7 +42,7 @@
 
     /* CONTACTO*/
     .columna-mapa {
-        border-top: 1px solid rgba(93, 93, 93, 0.763);
+        border-top: 1px solid map.get(mapa.$colores,color-footer-border);
     }
 
     /* PROMOCIONES*/

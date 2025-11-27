@@ -1,16 +1,15 @@
 /* GENERALES */
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
 @use '../utilities/variables';
 
 body {
-    /* background-color: #e6d8fe; */
-    background-color: #ffffff;
-    /* font-family: "Roboto", sans-serif; */
-    //font-family: "Montserrat", sans-serif;
+    background-color: map.get(mapa.$colores, color-secundario);
     font-family: variables.$fuentes;
 }
 
 h1 {
-    border-bottom: 1px solid rgba(69, 69, 69, 0.195);
+    border-bottom: 1px solid map.get(mapa.$colores, color-h1-border);
     padding-bottom: 10px;
 }
 /* FIN GENERALES */
