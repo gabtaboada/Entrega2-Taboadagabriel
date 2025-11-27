@@ -1,26 +1,30 @@
 /* FOOTER */
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
+@use '../utilities/mixin';
 
 footer {
     margin-top: 20px;
     padding: 10px;
-    background-color: #3c3c3c;
-    color: white;
+    background-color: map.get(mapa.$colores,color-footer-fondo);
+    //background-color: #3c3c3c;
+    color: map.get(mapa.$colores,color-secundario);
         h6 {
-        /* margin-top: 10px; */
         padding: 10px;
-        border-bottom: 1px solid rgba(93, 93, 93, 0.763);
+        border-bottom: map.get(mapa.$colores,color-footer-border);
+        //border-bottom: 1px solid rgba(93, 93, 93, 0.763);
     }
     .container{
         .row{
             .footer{
+                @include mixin.flex-center(flex,center,start);
+                flex-direction: row;
+                /*
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
-                /* grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: 3fr 1fr;     */ 
+                justify-content: center;*/
                 .columna {
                     padding: 10px;
-                    /* border: 1px solid white; */
                     align-items: flex-start;
                     font-size: 14px;
                     margin-left: 10px;
@@ -30,24 +34,25 @@ footer {
     }
 }
 .p-footer {
-    /* text-transform: capitalize; */
     margin-bottom: 5px;
     a {
         text-decoration: none;
-        color: white;
+        color: map.get(mapa.$colores,color-secundario);
     }
     i {
-        color: rgb(144, 142, 142);
+        color: map.get(mapa.$colores,color-redes);
+        //color: rgb(144, 142, 142);
         margin-right: 5px;
         font-size: 16px;
     }    
 }
 .copyright{
+    @include mixin.flex-center(flex,center,center);
     p {
         font-size: 13px;
-        /* border: 1px solid green; */
-        display: flex;
-        justify-content: center;
+        @include mixin.flex-center(flex,center,center);        
+        //display: flex;
+        //justify-content: center;
     }
 }
 .newsletter{
@@ -64,16 +69,15 @@ footer {
     width: 100%;
     padding: 5px 15px;
     font-size: 16px;
-    /* font-weight: 600; */
-    color: white;
-    background: #502899;
-    border: 2px solid #502899;
+    color: map.get(mapa.$colores,color-secundario);
+    background: map.get(mapa.$colores,color-terciario);
+    border: 2px solid map.get(mapa.$colores,color-terciario);
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease;
     &:hover {
         background: #50289960;
-        color: #fff;
+        color: map.get(mapa.$colores,color-secundario);
     }
 }
 

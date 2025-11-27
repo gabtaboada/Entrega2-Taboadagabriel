@@ -22,9 +22,7 @@ h1 {
 /* FIN GENERALES */
 /* HEADER */
 header {
-  /* margin-bottom: 20px; */
   padding: 20px;
-  /* background-color: #e2cef0; */
   background-color: #f4eaff;
 }
 header a {
@@ -36,29 +34,52 @@ header .navbar-brand img {
 }
 
 .navbar-nav .nav-link {
+  position: relative;
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 16px;
+  margin: 5px 10px;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #7c2872;
+  transition: width 0.3s ease;
 }
 .navbar-nav .nav-link:hover {
   color: #7c2872;
+}
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
 }
 .navbar-nav .activo {
   color: #7c2872;
 }
 
 /*
-.navbar-toggler:focus {
-    box-shadow: 0 0 0 0.2rem #7c2872;
-    border-color: #4d094529
+Antes de la animacion
+.navbar-nav{
+    .nav-link {
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 16px;
+        margin: 5px 10px;  
+        &:hover {
+            color: map.get(mapa.$colores,color-subrayado);
+        }
+    }
+    .activo {
+        color: map.get(mapa.$colores,color-subrayado);
+    }    
 }
 */
 .navbar-toggler:focus {
   box-shadow: 0 0 0 0.2rem #7c2872;
   border-color: rgba(77, 9, 69, 0.1607843137);
-}
-.navbar-toggler {
-  /* border: 1px solid #7c2872; */
 }
 
 .navbar-toggler-icon {
@@ -71,35 +92,35 @@ footer {
   margin-top: 20px;
   padding: 10px;
   background-color: #3c3c3c;
-  color: white;
+  color: #ffffff;
 }
 footer h6 {
-  /* margin-top: 10px; */
   padding: 10px;
-  border-bottom: 1px solid rgba(93, 93, 93, 0.763);
+  border-bottom: rgba(93, 93, 93, 0.763);
 }
 footer .container .row .footer {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  /* grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 3fr 1fr;     */
+  align-items: start;
+  flex-direction: row;
+  /*
+  display: flex;
+  flex-direction: row;
+  justify-content: center;*/
 }
 footer .container .row .footer .columna {
   padding: 10px;
-  /* border: 1px solid white; */
   align-items: flex-start;
   font-size: 14px;
   margin-left: 10px;
 }
 
 .p-footer {
-  /* text-transform: capitalize; */
   margin-bottom: 5px;
 }
 .p-footer a {
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
 .p-footer i {
   color: rgb(144, 142, 142);
@@ -107,11 +128,16 @@ footer .container .row .footer .columna {
   font-size: 16px;
 }
 
-.copyright p {
-  font-size: 13px;
-  /* border: 1px solid green; */
+.copyright {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.copyright p {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .newsletter input {
@@ -126,8 +152,7 @@ footer .container .row .footer .columna {
   width: 100%;
   padding: 5px 15px;
   font-size: 16px;
-  /* font-weight: 600; */
-  color: white;
+  color: #ffffff;
   background: #502899;
   border: 2px solid #502899;
   border-radius: 5px;
@@ -136,16 +161,12 @@ footer .container .row .footer .columna {
 }
 .boton-news:hover {
   background: rgba(80, 40, 153, 0.3764705882);
-  color: #fff;
+  color: #ffffff;
 }
 
 /* FIN FOOTER */
 /* MAIN */
-.mas-info a {
-  color: white;
-  text-decoration: none;
-}
-
+/* En entrega 2 , creo que no se usa*/
 .banner {
   margin-bottom: 20px;
   position: relative;
@@ -159,8 +180,9 @@ footer .container .row .footer .columna {
   width: 100%;
   margin: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .nosotros h3 {
@@ -209,10 +231,6 @@ footer .container .row .footer .columna {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
-  /* border: 2px solid black; */
-}
-.grillaIndex div {
-  /* border: 2px solid black; */
 }
 .grillaIndex div img {
   width: 100%;
@@ -221,10 +239,9 @@ footer .container .row .footer .columna {
 .columna-3 {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  /* border: 2px solid black; */
 }
 .columna-3 img {
   width: 100%;
@@ -240,14 +257,17 @@ footer .container .row .footer .columna {
 .columna-3 .mas-info {
   position: absolute;
   bottom: 15px;
+  /*
+  position: absolute;
+  bottom: 15px;
+  */
 }
 
 .columna-Promociones {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  /* border: 2px solid black; */
+  align-items: center;
 }
 .columna-Promociones img {
   width: 100%;
@@ -256,6 +276,10 @@ footer .container .row .footer .columna {
 .columna-Promociones .mas-info {
   position: absolute;
   bottom: 15px;
+  /*
+  position: absolute;
+  bottom: 15px;
+  */
 }
 .columna-Promociones p {
   position: absolute;
@@ -270,6 +294,7 @@ footer .container .row .footer .columna {
 .titulo {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: 20px 0;
 }
 
@@ -277,12 +302,16 @@ footer .container .row .footer .columna {
 /* DESTINOS */
 .destinos .grilla-destinos {
   display: grid;
-  grid-template-rows: repeat(1, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  /* border: 2px solid black; */
-  gap: 20px;
   justify-content: center;
   align-items: center;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  /* border: 2px solid black; 
+  justify-content: center;
+  align-items: center;
+  //display: grid;
+  */
+  gap: 20px;
 }
 .destinos .grilla-destinos img {
   border-radius: 10px;
@@ -291,9 +320,14 @@ footer .container .row .footer .columna {
 .destinos .grilla-destinos .caja {
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  /*
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  */
+  flex-direction: column;
 }
 .destinos .grilla-destinos .caja p {
   font-family: "Montserrat", sans-serif;
@@ -323,7 +357,6 @@ section .grilla-promociones {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
-  /* height: 100vh; */
   gap: 20px;
   justify-content: center;
   align-content: center;
@@ -337,20 +370,18 @@ section .grilla-promociones div {
 section .grilla-promociones div p {
   width: auto;
   position: absolute;
-  /* top:calc(50% - 19px); */
   top: 20px;
-  /* left: calc(50% - 46px); */
   color: white;
   font-size: 24px;
   text-transform: uppercase;
-  /* z-index: 2;
-  opacity: 0; */
 }
 section .grilla-promociones div .mas-info {
   position: absolute;
   bottom: 20px;
-  /* top:calc(50% - 19px);
-  left: calc(50% - 46px); */
+  /*
+  position: absolute;
+  bottom: 20px;
+  */
 }
 section .grilla-promociones img {
   border-radius: 10px;
@@ -359,31 +390,19 @@ section .grilla-promociones img {
 
 /* FIN PROMOCIONES */
 /* CONTACTO */
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #333;
-}
-form .nombre:after {
-  content: "*(requerido)";
-  font-size: 12px;
-  font-style: italic;
-  color: rgba(255, 0, 0, 0.632);
-}
-form .email:after {
-  content: "*(requerido)";
-  font-size: 12px;
-  font-style: italic;
-  color: rgba(255, 0, 0, 0.632);
-}
-form .mensaje:after {
+form .nombre:after, form .email:after, form .mensaje:after {
   content: "*(requerido)";
   font-size: 12px;
   font-style: italic;
   color: rgba(255, 0, 0, 0.632);
 }
 
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
 input,
 textarea {
   width: 100%;
@@ -424,48 +443,6 @@ input[aria-invalid=true] {
   height: 300px;
 }
 
-/* BORRAR ***/
-/*
-.datosContacto {
-    margin: 20px;
-}
-
-.datosContacto p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.datosContacto h3 {
-    text-transform: uppercase;
-}
-
-.formulario {
-    background-color: #cbb3f3;
-    width: 400px;
-    margin-left: 20px;
-}
-
-.formulario input {
-    text-align: left;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    height: 35px;
-    text-align: center;
-}
-
-.formulario-label {
-    margin: 10px;
-    font-size: 12px;
-    font-style: italic;
-}
-
-.formulario textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-}
-    */
 /* FIN CONTACTO */
 /*DESKTOP FIRST*/
 @media (max-width: 991px) {
@@ -475,16 +452,12 @@ input[aria-invalid=true] {
   }
   footer .container .row .footer {
     flex-direction: column;
-    /* grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 3fr 1fr;     */
   }
   footer .container .row .footer .columna {
     border-top: 1px solid rgba(93, 93, 93, 0.763);
     margin-left: 10px;
   }
   footer h6 {
-    /* margin-top: 10px; */
-    /* margin-bottom: 20px; */
     border-bottom: none;
   }
   .columna-Promociones p {

@@ -1,9 +1,12 @@
 /* GENERALES */
+@use '../utilities/variables';
+
 body {
     /* background-color: #e6d8fe; */
     background-color: #ffffff;
     /* font-family: "Roboto", sans-serif; */
-    font-family: "Montserrat", sans-serif;
+    //font-family: "Montserrat", sans-serif;
+    font-family: variables.$fuentes;
 }
 
 h1 {

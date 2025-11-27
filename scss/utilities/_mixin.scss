@@ -1,0 +1,10 @@
+@mixin flex-center($a,$c,$d) {
+    display: $a;
+    //flex-direction: $b;
+    justify-content: $c;
+    align-items: $d;
+}
+@mixin mas-info($a,$b){
+    position: $a;
+    bottom: $b;
+}

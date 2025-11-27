@@ -1,38 +1,49 @@
 /* DESTINOS */
+@use '../utilities/mixin';
+@use '../utilities/variables';
 
 .destinos{
     .grilla-destinos {
-        display: grid;
+        @include mixin.flex-center(grid,center,center);
         grid-template-rows: repeat(1, 1fr);
         grid-template-columns: repeat(3, 1fr);
-        /* border: 2px solid black; */
-        gap: 20px;
+        /* border: 2px solid black; 
         justify-content: center;
         align-items: center;
+        //display: grid;
+        */
+        gap: 20px;
         img {
             border-radius: 10px;
             width: 100%;
         }
         .caja {
             width: 100%;
+            @include mixin.flex-center(flex,center,center);
+            /*
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: center;   
+            */         
+            flex-direction: column;
+
             p {
-                font-family: "Montserrat", sans-serif;
+                //font-family: "Montserrat", sans-serif;
+                font-family: variables.$fuentes;
                 text-transform: uppercase;
                 font-weight: 400;
             }
         }
     }
     h5 {
-        font-family: "Montserrat", sans-serif;
+        //font-family: "Montserrat", sans-serif;
+        font-family: variables.$fuentes;
         text-transform: uppercase;
         font-weight: 600;
     }
     p {
-        font-family: "Montserrat", sans-serif;
+        //font-family: "Montserrat", sans-serif;
+        font-family: variables.$fuentes;
     }
 }
 

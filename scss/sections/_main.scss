@@ -1,9 +1,14 @@
 /* MAIN */
+//@use '../utilities/variables';
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
+@use '../utilities/mixin';
 
-.mas-info a {
-    color: white;
-    text-decoration: none;
-}
+/* En entrega 2 , creo que no se usa*/
+// .mas-info a {
+//     color: white;
+//     text-decoration: none;
+//  }
 
 .banner {
     margin-bottom: 20px;
@@ -18,9 +23,8 @@
 .columna-1 {
     width: 100%;
     margin: 20px;
-    display: flex;
+    @include mixin.flex-center(flex,center,center);
     flex-direction: column;
-    align-items: center;
 }
 
 .nosotros {
@@ -34,7 +38,7 @@
     height: 12px;
     border-radius: 50%;
     margin: 0 5px;
-    background-color: #502899;
+    background-color: map.get(mapa.$colores,color-terciario);
     &:hover {
         background-color: #7946d7;
     }
@@ -44,7 +48,7 @@
     color: #4d0945;
 }
 .carousel-control-prev-icon {
-    color: #502899;
+    color: map.get(mapa.$colores,color-terciario);
 }
 
 .carousel-icono-anterior img {
@@ -55,10 +59,9 @@
     width: 40px;
 }
 
-
 #BotonMasInfo {
     border-radius: 100px;
-    border: 2px solid #502899;
+    border: 2px solid map.get(mapa.$colores,color-terciario);
     color: white;
     background-color: #270e558a;
     &:hover {
@@ -71,23 +74,17 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
-    /* border: 2px solid black; */
     div{
-        /* border: 2px solid black; */
         img{
             width: 100%;
         }
     }
 }
 
-
 .columna-3 {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include mixin.flex-center(flex,center,center);
     flex-direction: column;
-    /* border: 2px solid black; */
     img {
         width: 100%;
         border-radius: 10px;
@@ -100,24 +97,28 @@
         font-weight: 600;
     }
     .mas-info {
+        @include mixin.mas-info(absolute,15px);    
+        /*
         position: absolute;
         bottom: 15px;
+        */
     }
 }
 
 .columna-Promociones {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 2px solid black; */
+    @include mixin.flex-center(flex,center,center);
     img {
         width: 100%;
         border-radius: 10px;
     }
+    
     .mas-info {
+        @include mixin.mas-info(absolute,15px);
+        /*
         position: absolute;
         bottom: 15px;
+        */
     }
     p {
         position: absolute;
@@ -131,8 +132,7 @@
 }
 
 .titulo {
-    display: flex;
-    justify-content: center;
+    @include mixin.flex-center(flex,center,center);
     margin: 20px 0;
 }
 

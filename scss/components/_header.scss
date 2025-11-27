@@ -1,8 +1,10 @@
 /* HEADER */
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
+@use '../utilities/mixin';
+
 header {
-    /* margin-bottom: 20px; */
     padding: 20px;
-    /* background-color: #e2cef0; */
     background-color: #f4eaff;
     a {
         text-decoration: none;
@@ -14,29 +16,61 @@ header {
 }
 .navbar-nav{
     .nav-link {
+        position: relative; // Importante para posicionar el ::after
         font-weight: 700;
         letter-spacing: 1px;
         font-size: 16px;
+        margin: 5px 10px;
+        
+        // Pseudo-elemento para el subrayado animado
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 0;
+            height: 2px; // Grosor del subrayado
+            background-color: map.get(mapa.$colores, color-subrayado);
+            transition: width 0.3s ease; // Velocidad de la animación
+        }
+        
         &:hover {
-            color: #7c2872;
+            color: map.get(mapa.$colores, color-subrayado);
+            
+            // Expande el subrayado al 100%
+            &::after {
+                width: 100%;
+            }
         }
     }
+    
     .activo {
-        color: #7c2872;
+        color: map.get(mapa.$colores, color-subrayado);
     }    
 }
 /*
-.navbar-toggler:focus {
-    box-shadow: 0 0 0 0.2rem #7c2872;
-    border-color: #4d094529
+Antes de la animacion
+.navbar-nav{
+    .nav-link {
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 16px;
+        margin: 5px 10px;  
+        &:hover {
+            color: map.get(mapa.$colores,color-subrayado);
+        }
+    }
+    .activo {
+        color: map.get(mapa.$colores,color-subrayado);
+    }    
 }
 */
 .navbar-toggler {
         &:focus {
-        box-shadow: 0 0 0 0.2rem #7c2872;
+        box-shadow: 0 0 0 0.2rem map.get(mapa.$colores,color-subrayado);
         border-color: #4d094529;
     }
-    /* border: 1px solid #7c2872; */
+    
 }
 
 .navbar-toggler-icon {
