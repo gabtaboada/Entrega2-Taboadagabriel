@@ -2,6 +2,7 @@
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
 @use '../utilities/variables';
+@use '../utilities/extend';
 
 body {
     background-color: map.get(mapa.$colores, color-secundario);
@@ -10,6 +11,18 @@ body {
 
 h1 {
     border-bottom: 1px solid map.get(mapa.$colores, color-h1-border);
-    padding-bottom: 10px;
+    @extend %marginH;
+    @extend %paddingH;
+}
+h2{
+    @extend %marginH;
+    @extend %paddingH;
+}
+h3{
+    margin: 10px 0;
+}
+h5{
+    @extend %marginH;
+    @extend %paddingH;    
 }
 /* FIN GENERALES */

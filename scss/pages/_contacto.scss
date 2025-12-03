@@ -2,69 +2,95 @@
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
 @use '../utilities/extend';
+@use '../utilities/mixin';
 
-form {
-    label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color:map.get(mapa.$colores,color-form-label);
-    }
+main{
+    section{
+        .row{
+            .col{
+                form{
+                    margin: 10px 0;
+                    padding: 10px;
 
-    .nombre {
-        &:after {
-            @extend %requerido;
+                    div{
+                        label {
+                            display: block;
+                            margin-bottom: 5px;
+                            font-weight: bold;
+                            color:map.get(mapa.$colores,color-form-label);
+                            padding: 10px 0;
+                            margin: 5px 0;
+                        }
+                        .nombre {
+                            &:after {
+                                @extend %requerido;
+                            }
+                        }
+                        .email {
+                            &:after {
+                                @extend %requerido;
+                            }
+                        }
+                        .mensaje {
+                            &:after {
+                                @extend %requerido;
+                            }
+                        }                        
+                        input,
+                        textarea {
+                            width: 100%;
+                            padding: 10px;
+                            margin: 2px 0;
+                            border: 1px solid map.get(mapa.$colores, color-form-input);
+                            border-radius: 4px;
+                            font-size: 14px;
+                            box-sizing: border-box;
+
+                            &:focus {
+                                outline: 2px solid map.get(mapa.$colores, color-terciario);
+                                outline-offset: 1px;
+                                border-color: map.get(mapa.$colores, color-terciario);
+                            }
+                        }
+
+                        input[aria-invalid="true"] {
+                            border-color: map.get(mapa.$colores, color-form-invalid);
+                        }
+
+                    }
+                    .boton-enviar {
+                        width: 100%;
+                        padding: 12px 35px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: map.get(mapa.$colores, color-terciario);
+                        background: transparent;
+                        border: 2px solid map.get(mapa.$colores, color-terciario);
+                        border-radius: 5px;
+
+                        &:hover {
+                            background: map.get(mapa.$colores, color-terciario);
+                            color : map.get(mapa.$colores, color-secundario);
+                        }
+                    }
+                }
+            }
+            .columna-mapa{
+                @include mixin.flex-center(flex,space-between,normal);
+                flex-direction: column;
+                div{
+                    margin: 5px;
+                    padding: 5px 0;
+                    p{
+                        margin: 5px 0;
+                    }
+                }
+            }
         }
     }
+} 
 
-    .email {
-        &:after {
-            @extend %requerido;
-        }
-    }
 
-    .mensaje {
-        &:after {
-            @extend %requerido;
-        }
-    }
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid map.get(mapa.$colores, color-form-input);
-    border-radius: 4px;
-    font-size: 14px;
-    box-sizing: border-box;
-
-    &:focus {
-        outline: 2px solid map.get(mapa.$colores, color-terciario);
-        outline-offset: 1px;
-        border-color: map.get(mapa.$colores, color-terciario);
-    }
-}
-
-input[aria-invalid="true"] {
-    border-color: map.get(mapa.$colores, color-form-invalid);
-}
-
-.boton-enviar {
-    width: 100%;
-    padding: 12px 35px;
-    font-size: 16px;
-    font-weight: 600;
-    color: map.get(mapa.$colores, color-terciario);
-    background: transparent;
-    border: 2px solid map.get(mapa.$colores, color-terciario);
-    border-radius: 5px;
-
-    &:hover {
-        background: map.get(mapa.$colores, color-terciario);
-        color : map.get(mapa.$colores, color-secundario);
-    }
-}
 
 
 .mapa {

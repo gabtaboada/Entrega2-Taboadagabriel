@@ -1,11 +1,12 @@
 /*DESKTOP FIRST*/
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
+@use '../utilities/mixin';
 
 @media (max-width: 991px) {
     .grillaIndex {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        @include mixin.grid-Rows-Columna(3,1fr,2,1fr);
+        gap: 20px;
     }
     footer{
         .container{
@@ -32,8 +33,7 @@
     /*DESTINOS*/
     .destinos{
         .grilla-destinos {
-                grid-template-rows: repeat(3, 1fr);
-                grid-template-columns: repeat(1, 1fr);
+                @include mixin.grid-Rows-Columna(3,1fr,1,1fr);
                 img {
                     width: 100%;
                 }
@@ -48,8 +48,7 @@
     /* PROMOCIONES*/
     section{
         .grilla-promociones {
-            grid-template-rows: repeat(1, 1fr);
-            grid-template-columns: repeat(2, 1fr);
+            @include mixin.grid-Rows-Columna(1,1fr,2,1fr);
             img {
                 width: 100%;
             }
@@ -60,8 +59,7 @@
 /* 360 a 480pxmobile */
 @media (max-width:480px) {
     .grillaIndex {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        @include mixin.grid-Rows-Columna(6,1fr,1,1fr);
     }
     /*DESTINOS*/
     .destinos{
@@ -74,8 +72,7 @@
     /*PROMOCIONES*/
     section{
         .grilla-promociones {
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-columns: repeat(1, 1fr);
+            @include mixin.grid-Rows-Columna(3,1fr,1,1fr);
             div{
                 p{
                     top: calc(50% - 40px);

@@ -1,39 +1,41 @@
 /* DESTINOS */
 @use '../utilities/mixin';
 @use '../utilities/variables';
+@use '../utilities/extend';
 
-.destinos{
+.destinos {
     .grilla-destinos {
-        @include mixin.flex-center(grid,center,center);
-        grid-template-rows: repeat(1, 1fr);
-        grid-template-columns: repeat(3, 1fr);
+        @include mixin.flex-center(grid, center, center);
+        @include mixin.grid-Rows-Columna(1, 1fr, 3, 1fr);
         gap: 20px;
+
         img {
-            border-radius: 10px;
-            width: 100%;
+            @extend %EstiloImg;
         }
+
         .caja {
             width: 100%;
-            @include mixin.flex-center(flex,center,center);
+            @include mixin.flex-center(flex, center, center);
             flex-direction: column;
-
+            margin: 10px 0;
             p {
                 font-family: variables.$fuentes;
-                text-transform: uppercase;
-                font-weight: 400;
+                @include mixin.texto-uppercase(uppercase, 400);
             }
         }
     }
+
     h5 {
         font-family: variables.$fuentes;
-        text-transform: uppercase;
-        font-weight: 600;
+        @include mixin.texto-uppercase(uppercase, 600);
     }
+
     p {
         font-family: variables.$fuentes;
+        margin: 10px 0;
+        padding: 5px;
     }
 }
-
 
 
 /* FIN DESTINO */

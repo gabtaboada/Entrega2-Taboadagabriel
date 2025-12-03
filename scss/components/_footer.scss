@@ -8,10 +8,6 @@ footer {
     padding: 10px;
     background-color: map.get(mapa.$colores,color-footer-fondo);
     color: map.get(mapa.$colores,color-secundario);
-        h6 {
-        padding: 10px;
-        border-bottom: map.get(mapa.$colores,color-footer-border);
-    }
     .container{
         .row{
             .footer{
@@ -19,57 +15,72 @@ footer {
                 flex-direction: row;
                 .columna {
                     padding: 10px;
+                    margin: 5px;
                     align-items: flex-start;
                     font-size: 14px;
                     margin-left: 10px;
-                }               
+                    h6 {
+                        //padding: 10px;
+                        padding: 0 5px;
+                        margin: 5px 0;
+                        font-weight: bold;
+                        border-bottom: map.get(mapa.$colores,color-footer-border);
+                    }
+                    .p-footer {
+                        //margin-bottom: 5px;
+                        padding: 0 5px;
+                        margin: 5px 0;
+                        a {
+                            text-decoration: none;
+                            color: map.get(mapa.$colores,color-secundario);
+                        }
+                        i {
+                            color: map.get(mapa.$colores,color-redes);
+                            margin-right: 5px;
+                            font-size: 16px;
+                        }    
+                    }
+                    .newsletter{
+                        input {
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            width: 100%;
+                            height: 35px;
+                            text-align: center;
+                        }
+                    }
+
+                    .boton-news {
+                        width: 100%;
+                        padding: 5px 15px;
+                        font-size: 16px;
+                        color: map.get(mapa.$colores,color-secundario);
+                        background: map.get(mapa.$colores,color-terciario);
+                        border: 2px solid map.get(mapa.$colores,color-terciario);
+                        border-radius: 5px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        &:hover {
+                            background: map.get(mapa.$colores,color-botonNews-hover);
+                            color: map.get(mapa.$colores,color-secundario);
+                        }
+                    }                    
+                }   
+                .copyright{
+                    @include mixin.flex-center(flex,center,center);
+                    p {
+                        margin: 5px;
+                        padding: 5px;
+                        font-size: 13px;
+                        @include mixin.flex-center(flex,center,center);        
+                    }
+                }            
             }
         }
     }
 }
-.p-footer {
-    margin-bottom: 5px;
-    a {
-        text-decoration: none;
-        color: map.get(mapa.$colores,color-secundario);
-    }
-    i {
-        color: map.get(mapa.$colores,color-redes);
-        margin-right: 5px;
-        font-size: 16px;
-    }    
-}
-.copyright{
-    @include mixin.flex-center(flex,center,center);
-    p {
-        font-size: 13px;
-        @include mixin.flex-center(flex,center,center);        
-    }
-}
-.newsletter{
-    input {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        width: 100%;
-        height: 35px;
-        text-align: center;
-    }
-}
 
-.boton-news {
-    width: 100%;
-    padding: 5px 15px;
-    font-size: 16px;
-    color: map.get(mapa.$colores,color-secundario);
-    background: map.get(mapa.$colores,color-terciario);
-    border: 2px solid map.get(mapa.$colores,color-terciario);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    &:hover {
-        background: map.get(mapa.$colores,color-botonNews-hover);
-        color: map.get(mapa.$colores,color-secundario);
-    }
-}
+
+
 
 /* FIN FOOTER */

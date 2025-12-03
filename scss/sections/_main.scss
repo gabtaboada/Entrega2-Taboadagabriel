@@ -3,6 +3,8 @@
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
 @use '../utilities/mixin';
+@use '../utilities/extend';
+
 
 .banner {
     margin-bottom: 20px;
@@ -12,18 +14,59 @@
         z-index: 0;
     }
 }
-
+main{
+    section{
+        .titulo {
+            @include mixin.flex-center(flex,center,center);
+            margin: 20px 0;
+        }
+        .row{
+            .col{
+                p{
+                    margin: 20px 0;
+                }
+            }
+            .nosotros {
+                h3 {
+                    text-transform: uppercase;
+                }
+                p{
+                    margin: 10px 0;
+                }
+            } 
+        }
+    }
+    .promociones-destacadas{
+        .row{
+            .columna-Promociones {
+                position: relative;
+                @include mixin.flex-center(flex,center,center);
+                img {
+                    @extend %EstiloImg;
+                }
+                
+                .mas-info {
+                    @include mixin.mas-info(absolute,15px);
+                }
+                p {
+                    position: absolute;
+                    color: white;
+                    top: 10px;
+                    @include mixin.texto-uppercase(uppercase,400);
+                    font-size: 18px;
+                    z-index: 2;
+                    margin: 5px 0;
+                    padding: 5px;
+                }
+            }
+        }
+    }
+}
 .columna-1 {
     width: 100%;
     margin: 20px;
     @include mixin.flex-center(flex,center,center);
     flex-direction: column;
-}
-
-.nosotros {
-    h3 {
-        text-transform: uppercase;
-    }
 }
 
 .carousel-indicators [data-bs-slide-to] {
@@ -53,10 +96,8 @@
 }
 
 #BotonMasInfo {
-    border-radius: 100px;
-    border: 2px solid map.get(mapa.$colores,color-terciario);
-    color:map.get(mapa.$colores,color-secundario);
-    background-color: map.get(mapa.$colores,color-botonInfo-fondo);
+    @extend %Boton-mas-info;
+    margin: 5px 10px;
     &:hover {
         background-color: map.get(mapa.$colores,color-botonInfo-hover);
     }
@@ -64,12 +105,12 @@
 
 .grillaIndex {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    /* mixin */ 
+    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
     gap: 20px;
     div{
         img{
-            width: 100%;
+            @extend %EstiloImg;
         }
     }
 }
@@ -79,46 +120,17 @@
     @include mixin.flex-center(flex,center,center);
     flex-direction: column;
     img {
-        width: 100%;
-        border-radius: 10px;
+        @extend %EstiloImg;
     }
         p {
         position: absolute;
         color: white;
-        text-transform: uppercase;
+        @include mixin.texto-uppercase(uppercase,600);
         font-size: 24px;
-        font-weight: 600;
-    }
+        }
     .mas-info {
         @include mixin.mas-info(absolute,15px);    
     }
-}
-
-.columna-Promociones {
-    position: relative;
-    @include mixin.flex-center(flex,center,center);
-    img {
-        width: 100%;
-        border-radius: 10px;
-    }
-    
-    .mas-info {
-        @include mixin.mas-info(absolute,15px);
-    }
-    p {
-        position: absolute;
-        color: white;
-        top: 10px;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-size: 18px;
-        z-index: 2;
-    }
-}
-
-.titulo {
-    @include mixin.flex-center(flex,center,center);
-    margin: 20px 0;
 }
 
 /* FIN DE MAIN */

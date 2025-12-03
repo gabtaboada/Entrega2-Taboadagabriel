@@ -1,6 +1,26 @@
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
+
 %requerido{
     content: "*(requerido)";
     font-size: 12px;
     font-style: italic;
-    color: rgba(255, 0, 0, 0.632);
+    color:map.get(mapa.$colores,color-campo-requerido);
+}
+%Boton-mas-info{
+    border-radius: 100px;
+    border: 2px solid map.get(mapa.$colores,color-terciario);
+    color:map.get(mapa.$colores,color-secundario);
+    background-color: map.get(mapa.$colores,color-botonInfo-fondo);    
+}
+%marginH{
+    margin: 10px 10px;
+}
+%paddingH{
+    padding: 5px;
+}
+%EstiloImg{
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
 }

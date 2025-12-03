@@ -2,22 +2,16 @@
 @use '../utilities/mixin';
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
+@use '../utilities/extend';
 
 .columna-2 {
     margin: 20px;
 }
-/* CREO QUE NO SE USA ESTE 
-.card{
-    .fondo-opacidad {
-        background-color: #1313136d;
-    }
-} 
-*/
+
 section{
     .grilla-promociones {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(1, 1fr);
+        @include mixin.grid-Rows-Columna(1,1fr,3,1fr);
         gap: 20px;
         justify-content: center;
         align-content: center;
@@ -38,8 +32,7 @@ section{
             }
         }
         img {
-            border-radius: 10px;
-            width: 100%;
+            @extend %EstiloImg;
         }
     }   
 }

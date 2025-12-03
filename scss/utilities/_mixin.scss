@@ -7,3 +7,13 @@
     position: $a;
     bottom: $b;
 }
+@mixin texto-uppercase($a,$b){
+    text-transform: $a;
+    font-weight: $b;
+}
+@mixin grid-Rows-Columna($a,$b,$c,$d){
+//$a y $b para grid-template rows
+//$c y $d para grid-template columns
+    grid-template-rows: repeat($a,$b);
+    grid-template-columns: repeat($c,$d);
+}
