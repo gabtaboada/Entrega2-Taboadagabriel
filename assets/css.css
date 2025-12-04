@@ -1,0 +1,616 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* RESET CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GENERALES */
+/* imagenes */
+/* botones */
+/* animaciones */
+/* GENERALES */
+main section .row .col form div .nombre:after, main section .row .col form div .email:after, main section .row .col form div .mensaje:after {
+  content: "*(requerido)";
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(255, 0, 0, 0.632);
+}
+
+#BotonMasInfo, footer .container .row .footer .columna .boton-news {
+  border-radius: 0px;
+  border: 1px solid #502899;
+  color: #ffffff;
+  background-color: rgba(39, 14, 85, 0.5411764706);
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+main section .row .col form .boton-enviar {
+  border-radius: 0px;
+  border: 1px solid #502899;
+  color: rgba(80, 40, 153, 0.5725490196);
+  background-color: #ffffff;
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+h1, h2, h5 {
+  margin: 10px 10px;
+}
+
+h1, h2, h5 {
+  padding: 5px;
+}
+
+section .grilla-promociones div .contenedorimagenPromociones img, main .destinos .row .columna-3-destinos .contenedorimagenDestinos img, main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas img, main section .row .col .grillaIndex .columna-3 img, main .promociones-destacadas .row .columna-Promociones .contenedorimagenPromociones img {
+  padding: 5px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* Para animaciones de los botones */
+main section .row .col form .boton-enviar::before, main section .row .col form .boton-enviar::after, #BotonMasInfo::before, #BotonMasInfo::after, footer .container .row .footer .columna .boton-news::before, footer .container .row .footer .columna .boton-news::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #502899;
+  border-radius: 0px;
+  transition: all 0.35s ease;
+  content: "";
+  z-index: 1;
+  pointer-events: none;
+}
+
+section .grilla-promociones div .contenedorimagenPromociones, main .destinos .row .columna-3-destinos .contenedorimagenDestinos, main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas, main .promociones-destacadas .row .columna-Promociones .contenedorimagenPromociones {
+  overflow: hidden;
+  border-radius: 20px;
+  height: 100%;
+  position: relative;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  border-bottom: 1px solid rgba(69, 69, 69, 0.195);
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+/* FIN GENERALES */
+/* HEADER */
+header {
+  padding: 20px;
+  background-color: #f4eaff;
+}
+header nav div a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+header nav div .navbar-brand img {
+  width: 150px;
+}
+header nav div div .navbar-nav .nav-link {
+  padding: 5px;
+}
+header nav div div .navbar-nav .nav-link span {
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 16px;
+  margin: 5px 10px;
+  font-family: "Montserrat", sans-serif;
+}
+header nav div div .navbar-nav .nav-link span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #7c2872;
+  transition: width 0.5s ease;
+}
+header nav div div .navbar-nav .nav-link:hover {
+  color: #7c2872;
+}
+header nav div div .navbar-nav .nav-link:hover span::after {
+  width: 100%;
+}
+header nav div div .navbar-nav .activo {
+  color: #7c2872;
+  transition: none;
+}
+header nav div .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem #7c2872;
+  border-color: rgba(77, 9, 69, 0.1607843137);
+}
+header nav div .navbar-toggler-icon {
+  background-image: url(../img/menu.png);
+}
+
+/* FIN HEADER */
+/* FOOTER */
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #3c3c3c;
+  color: #ffffff;
+}
+footer .container .row .footer {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: row;
+}
+footer .container .row .footer .columna {
+  padding: 10px;
+  margin: 5px;
+  align-items: flex-start;
+  font-size: 14px;
+  margin-left: 10px;
+}
+footer .container .row .footer .columna h6 {
+  padding: 0 5px;
+  margin: 5px 0;
+  font-weight: bold;
+  border-bottom: rgba(93, 93, 93, 0.763);
+}
+footer .container .row .footer .columna .p-footer {
+  padding: 0 5px;
+  margin: 5px 0;
+}
+footer .container .row .footer .columna .p-footer a {
+  text-decoration: none;
+  color: #ffffff;
+}
+footer .container .row .footer .columna .p-footer i {
+  color: rgb(144, 142, 142);
+  margin-right: 5px;
+  font-size: 16px;
+}
+footer .container .row .footer .columna .newsletter input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+}
+footer .container .row .footer .columna .boton-news {
+  width: 100%;
+  padding: 5px 15px;
+  font-size: 16px;
+}
+footer .container .row .footer .columna .boton-news:hover {
+  background-color: rgba(80, 40, 153, 0.5725490196);
+}
+footer .container .row .footer .columna .boton-news:hover::before {
+  width: 100%;
+}
+footer .container .row .footer .columna .boton-news:hover::after {
+  height: 100%;
+}
+footer .container .row .footer .columna .boton-news::before {
+  width: 0;
+  height: 100%;
+  border-width: 2px 0 2px 0;
+}
+footer .container .row .footer .columna .boton-news::after {
+  width: 100%;
+  height: 0;
+  border-width: 0 2px 0 2px;
+}
+footer .container .row .footer .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container .row .footer .copyright p {
+  margin: 5px;
+  padding: 5px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FIN FOOTER */
+/* MAIN */
+main .banner {
+  margin-bottom: 20px;
+  position: relative;
+}
+main .banner img {
+  width: 100%;
+  z-index: 0;
+}
+main section .titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+main section .row .col p {
+  margin: 20px 0;
+}
+main section .row .col .grillaIndex {
+  display: grid;
+  /* mixin */
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+main section .row .col .grillaIndex .columna-3 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+}
+main section .row .col .grillaIndex .columna-3:hover img {
+  transform: scale(1.1);
+}
+main section .row .col .grillaIndex .columna-3 img {
+  transition: transform 0.6s;
+}
+main section .row .col .grillaIndex .columna-3 p {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
+}
+main section .row .col .grillaIndex .columna-3 .mas-info {
+  position: absolute;
+  bottom: 15px;
+}
+main section .row .col .carousel .carousel-indicators [data-bs-slide-to] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #502899;
+}
+main section .row .col .carousel .carousel-indicators [data-bs-slide-to]:hover {
+  background-color: #7946d7;
+}
+main section .row .col .carousel .carousel-control-prev {
+  color: #4d0945;
+}
+main section .row .col .carousel .carousel-control-prev .carousel-icono-anterior img {
+  width: 40px;
+}
+main section .row .col .carousel .carousel-control-next .carousel-icono-siguiente img {
+  width: 40px;
+}
+main section .row .nosotros .columna-1 {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main section .row .nosotros h3 {
+  text-transform: uppercase;
+}
+main section .row .nosotros p {
+  margin: 10px 0;
+}
+main .promociones-destacadas .row .columna-Promociones {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+main .promociones-destacadas .row .columna-Promociones .contenedorimagenPromociones img {
+  transition: transform 0.6s;
+  display: block;
+}
+main .promociones-destacadas .row .columna-Promociones:hover .contenedorimagenPromociones img {
+  transform: scale(1.1);
+}
+main .promociones-destacadas .row .columna-Promociones .mas-info {
+  position: absolute;
+  bottom: 15px;
+}
+main .promociones-destacadas .row .columna-Promociones p {
+  position: absolute;
+  color: white;
+  top: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 18px;
+  z-index: 2;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.carousel-control-prev-icon {
+  color: #502899;
+}
+
+#BotonMasInfo {
+  padding: 5px 7px;
+  margin: 5px 10px;
+}
+#BotonMasInfo:hover {
+  background-color: rgba(80, 40, 153, 0.5725490196);
+}
+#BotonMasInfo:hover::before {
+  width: 100%;
+}
+#BotonMasInfo:hover::after {
+  height: 100%;
+}
+#BotonMasInfo::before {
+  width: 0;
+  height: 100%;
+  border-width: 2px 0 2px 0;
+}
+#BotonMasInfo::after {
+  width: 100%;
+  height: 0;
+  border-width: 0 2px 0 2px;
+}
+
+/* FIN DE MAIN */
+/* DESTINOS */
+main .destinos .row .columna-3-destinos {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .destinos .row .columna-3-destinos .contenedorimagenDestinos:hover img {
+  transform: scale(1.1);
+}
+main .destinos .row .columna-3-destinos .contenedorimagenDestinos img {
+  transition: transform 0.6s;
+  display: block;
+}
+main .destinos .row .columna-3-destinos p {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
+}
+main .destinos .row .columna-3-destinos .mas-info {
+  position: absolute;
+  bottom: 15px;
+}
+main .destinos .row .columna-destinos .grilla-destinos {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+main .destinos .row .columna-destinos .grilla-destinos .caja {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px 0;
+  border-radius: 20px;
+}
+main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas:hover img {
+  transform: scale(1.1);
+}
+main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas img {
+  transition: transform 0.6s;
+  display: block;
+}
+main .destinos .row .columna-destinos .grilla-destinos .caja p {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+main .destinos .row .columna-destinos h5 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+main .destinos .row .columna-destinos p {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+/* FIN DESTINO */
+/* PROMOCIONES */
+section .grilla-promociones {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
+}
+section .grilla-promociones div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+section .grilla-promociones div .contenedorimagenPromociones img {
+  transition: transform 0.6s;
+  display: block;
+}
+section .grilla-promociones div p {
+  width: auto;
+  position: absolute;
+  top: 20px;
+  color: #ffffff;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+section .grilla-promociones div .mas-info {
+  position: absolute;
+  bottom: 20px;
+}
+section .grilla-promociones div:hover {
+  /*
+  .contenedorimagenPromociones 
+  {*/
+}
+section .grilla-promociones div:hover img {
+  transform: scale(1.1);
+}
+section .grilla-promociones div:hover {
+  /*}*/
+}
+
+/* FIN PROMOCIONES */
+/* CONTACTO */
+main section .row .col form {
+  margin: 10px 0;
+  padding: 10px;
+}
+main section .row .col form div label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+  padding: 10px 0;
+  margin: 5px 0;
+}
+main section .row .col form div input,
+main section .row .col form div textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 2px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+main section .row .col form div input:focus,
+main section .row .col form div textarea:focus {
+  outline: 2px solid #502899;
+  outline-offset: 1px;
+  border-color: #502899;
+}
+main section .row .col form div input[aria-invalid=true] {
+  border-color: #dc3545;
+}
+main section .row .col form .boton-enviar {
+  width: 100%;
+  padding: 12px 35px;
+  font-size: 16px;
+  font-weight: 600;
+}
+main section .row .col form .boton-enviar:hover {
+  background-color: rgba(80, 40, 153, 0.5725490196);
+  color: #502899;
+}
+main section .row .col form .boton-enviar:hover::before {
+  width: 100%;
+}
+main section .row .col form .boton-enviar:hover::after {
+  height: 100%;
+}
+main section .row .col form .boton-enviar::before {
+  width: 0;
+  height: 100%;
+  border-width: 2px 0 2px 0;
+}
+main section .row .col form .boton-enviar::after {
+  width: 100%;
+  height: 0;
+  border-width: 0 2px 0 2px;
+}
+main section .row .columna-mapa {
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+  flex-direction: column;
+}
+main section .row .columna-mapa div {
+  margin: 5px;
+  padding: 5px 0;
+}
+main section .row .columna-mapa div p {
+  margin: 5px 0;
+}
+main section .row .columna-mapa .mapa iframe {
+  width: 100%;
+  height: 300px;
+}
+
+/* FIN CONTACTO */
+/*DESKTOP FIRST*/
+@media (max-width: 991px) {
+  main section .row .col .grillaIndex {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  footer .container .row .footer {
+    flex-direction: column;
+  }
+  footer .container .row .footer .columna {
+    border-top: 1px solid rgba(93, 93, 93, 0.763);
+    margin-left: 10px;
+  }
+  footer h6 {
+    border-bottom: none;
+  }
+  .columna-Promociones p {
+    font-size: 24px;
+  }
+  /*DESTINOS*/
+  main .destinos .row .columna-destinos .grilla-destinos {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+  main .destinos .row .columna-destinos .grilla-destinos img {
+    width: 100%;
+  }
+  /* CONTACTO*/
+  .columna-mapa {
+    border-top: 1px solid rgba(93, 93, 93, 0.763);
+  }
+  /* PROMOCIONES*/
+  section .grilla-promociones {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  section .grilla-promociones img {
+    width: 100%;
+  }
+}
+/* 360 a 480pxmobile */
+@media (max-width: 480px) {
+  /* header */
+  main section .row .col .grillaIndex {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /*DESTINOS*/
+  /*PROMOCIONES*/
+  section .grilla-promociones {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+  }
+  section .grilla-promociones div p {
+    top: calc(50% - 40px);
+  }
+}
+
+/*# sourceMappingURL=css.css.map */
