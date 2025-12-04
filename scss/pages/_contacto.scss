@@ -3,6 +3,7 @@
 @use '../utilities/maps' as mapa;
 @use '../utilities/extend';
 @use '../utilities/mixin';
+@use '../utilities/variables';
 
 main{
     section{
@@ -59,20 +60,36 @@ main{
 
                     }
                     .boton-enviar {
+                        @extend %boton-enviar-mensaje;
                         width: 100%;
                         padding: 12px 35px;
                         font-size: 16px;
                         font-weight: 600;
-                        color: map.get(mapa.$colores, color-terciario);
-                        background: transparent;
-                        border: 2px solid map.get(mapa.$colores, color-terciario);
-                        border-radius: 5px;
-
-                        &:hover {
-                            background: map.get(mapa.$colores, color-terciario);
-                            color : map.get(mapa.$colores, color-secundario);
+                        &:hover {//posiciono el borde
+                            background-color: map.get(mapa.$colores, color-botonInfo-hover);
+                            color: map.get(mapa.$colores,color-terciario); 
+                            &::before {
+                                width: 100%;
+                            }
+                            &::after {
+                                height: 100%;
+                            }
                         }
-                    }
+                        ////////
+                        &::before {
+                            @extend %TransicionBotones;
+                            width: 0;
+                            height: 100%;
+                            border-width: 2px 0 2px 0;
+
+                        }
+                        &::after {
+                            @extend %TransicionBotones;
+                            width: 100%;
+                            height: 0;
+                            border-width: 0 2px 0 2px;
+                        }
+                    }    
                 }
             }
             .columna-mapa{

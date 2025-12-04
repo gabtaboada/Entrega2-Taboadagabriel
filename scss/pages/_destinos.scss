@@ -10,9 +10,20 @@ main{
                 position: relative;
                 @include mixin.flex-center(flex,center,center);
                 flex-direction: column;
-                img {
-                    @extend %EstiloImg;
-                }
+    
+                .contenedorimagenDestinos {
+                    @extend %TransicionesImagenes;
+                    &:hover{
+                    img{
+                        transform:scale(1.1); 
+                        }
+                    }   
+                    img {
+                        @extend %EstiloImg;
+                        transition: transform variables.$speed-scale-img;
+                        display: block;
+                    }
+                }    
                     p {
                     position: absolute;
                     color: white;
@@ -28,23 +39,32 @@ main{
                     @include mixin.flex-center(grid, center, center);
                     @include mixin.grid-Rows-Columna(1, 1fr, 3, 1fr);
                     gap: 20px;
-
-                    img {
-                        @extend %EstiloImg;
-                    }
-
                     .caja {
                         width: 100%;
                         @include mixin.flex-center(flex, center, center);
                         flex-direction: column;
                         margin: 10px 0;
+                        border-radius: variables.$Img-border-radius;
+                        .contenedorimagenEscapadas {
+                            @extend %TransicionesImagenes;
+                            &:hover{
+                            img{
+                                transform:scale(1.1); 
+                                }
+                            }   
+                            img {
+                                @extend %EstiloImg;
+                                transition: transform variables.$speed-scale-img;
+                                display: block;
+                            }
+                        }  
+
                         p {
                             font-family: variables.$fuentes;
                             @include mixin.texto-uppercase(uppercase, 600);
                         }
                     }
                 }
-
                 h5 {
                     font-family: variables.$fuentes;
                     @include mixin.texto-uppercase(uppercase, 600);

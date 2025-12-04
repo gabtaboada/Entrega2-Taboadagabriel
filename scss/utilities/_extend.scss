@@ -1,26 +1,65 @@
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
+@use '../utilities/variables';
 
-%requerido{
+%requerido {
     content: "*(requerido)";
     font-size: 12px;
     font-style: italic;
-    color:map.get(mapa.$colores,color-campo-requerido);
+    color: map.get(mapa.$colores, color-campo-requerido);
 }
-%Boton-mas-info{
-    border-radius: 100px;
-    border: 2px solid map.get(mapa.$colores,color-terciario);
-    color:map.get(mapa.$colores,color-secundario);
-    background-color: map.get(mapa.$colores,color-botonInfo-fondo);    
+
+%Boton-mas-info {
+    border-radius: variables.$Btn-border-radius;
+    border: 1px solid map.get(mapa.$colores, color-terciario);
+    color: map.get(mapa.$colores, color-secundario);
+    background-color: map.get(mapa.$colores, color-botonInfo-fondo);
+    transition: background-color variables.$speed-Background-boton ease;
+    overflow: hidden;
+    position: relative;
+
 }
-%marginH{
+
+%boton-enviar-mensaje {
+    border-radius: variables.$Btn-border-radius;
+    border: 1px solid map.get(mapa.$colores, color-terciario);
+    color: map.get(mapa.$colores, color-botonInfo-hover);
+    background-color: map.get(mapa.$colores, color-secundario);
+    transition: background-color variables.$speed-Background-boton ease;
+    overflow: hidden;
+    position: relative;
+}
+
+%marginH {
     margin: 10px 10px;
 }
-%paddingH{
+
+%paddingH {
     padding: 5px;
 }
-%EstiloImg{
+
+%EstiloImg {
     padding: 5px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: variables.$Img-border-radius;
+}
+
+/* Para animaciones de los botones */
+%TransicionBotones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid map.get(mapa.$colores, color-terciario);
+    border-radius: 0px;
+    transition: all variables.$speed-borde-boton ease;
+    content: "";
+    z-index: 1; //pongo los bordes por encima del fondo
+    pointer-events: none; //hago invisible al mouse el borde
+}
+
+%TransicionesImagenes {
+    overflow: hidden;
+    border-radius: variables.$Img-border-radius;
+    height: 100%; // 
+    position: relative; // 
 }

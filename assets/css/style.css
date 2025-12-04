@@ -7,6 +7,10 @@
 }
 
 /* GENERALES */
+/* imagenes */
+/* botones */
+/* animaciones */
+/* GENERALES */
 main section .row .col form div .nombre:after, main section .row .col form div .email:after, main section .row .col form div .mensaje:after {
   content: "*(requerido)";
   font-size: 12px;
@@ -14,11 +18,24 @@ main section .row .col form div .nombre:after, main section .row .col form div .
   color: rgba(255, 0, 0, 0.632);
 }
 
-#BotonMasInfo {
-  border-radius: 100px;
-  border: 2px solid #502899;
+#BotonMasInfo, footer .container .row .footer .columna .boton-news {
+  border-radius: 0px;
+  border: 1px solid #502899;
   color: #ffffff;
   background-color: rgba(39, 14, 85, 0.5411764706);
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+main section .row .col form .boton-enviar {
+  border-radius: 0px;
+  border: 1px solid #502899;
+  color: rgba(80, 40, 153, 0.5725490196);
+  background-color: #ffffff;
+  transition: background-color 0.5s ease;
+  overflow: hidden;
+  position: relative;
 }
 
 h1, h2, h5 {
@@ -29,10 +46,30 @@ h1, h2, h5 {
   padding: 5px;
 }
 
-section .grilla-promociones img, main .destinos .row .columna-3-destinos img, main .destinos .row .columna-destinos .grilla-destinos img, main section .row .col .grillaIndex div img, main section .row .col .grillaIndex .columna-3 img, main .promociones-destacadas .row .columna-Promociones img {
+section .grilla-promociones div .contenedorimagenPromociones img, main .destinos .row .columna-3-destinos .contenedorimagenDestinos img, main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas img, main section .row .col .grillaIndex .columna-3 img, main .promociones-destacadas .row .columna-Promociones .contenedorimagenPromociones img {
   padding: 5px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
+}
+
+/* Para animaciones de los botones */
+main section .row .col form .boton-enviar::before, main section .row .col form .boton-enviar::after, #BotonMasInfo::before, #BotonMasInfo::after, footer .container .row .footer .columna .boton-news::before, footer .container .row .footer .columna .boton-news::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #502899;
+  border-radius: 0px;
+  transition: all 0.35s ease;
+  content: "";
+  z-index: 1;
+  pointer-events: none;
+}
+
+section .grilla-promociones div .contenedorimagenPromociones, main .destinos .row .columna-3-destinos .contenedorimagenDestinos, main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas, main .promociones-destacadas .row .columna-Promociones .contenedorimagenPromociones {
+  overflow: hidden;
+  border-radius: 20px;
+  height: 100%;
+  position: relative;
 }
 
 body {
@@ -62,30 +99,36 @@ header nav div .navbar-brand img {
   width: 150px;
 }
 header nav div div .navbar-nav .nav-link {
+  padding: 5px;
+}
+header nav div div .navbar-nav .nav-link span {
   position: relative;
+  display: inline-block;
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 16px;
   margin: 5px 10px;
+  font-family: "Montserrat", sans-serif;
 }
-header nav div div .navbar-nav .nav-link::after {
+header nav div div .navbar-nav .nav-link span::after {
   content: "";
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
   width: 0;
   height: 2px;
   background-color: #7c2872;
-  transition: width 0.3s ease;
+  transition: width 0.5s ease;
 }
 header nav div div .navbar-nav .nav-link:hover {
   color: #7c2872;
 }
-header nav div div .navbar-nav .nav-link:hover::after {
+header nav div div .navbar-nav .nav-link:hover span::after {
   width: 100%;
 }
 header nav div div .navbar-nav .activo {
   color: #7c2872;
+  transition: none;
 }
 header nav div .navbar-toggler:focus {
   box-shadow: 0 0 0 0.2rem #7c2872;
@@ -95,23 +138,6 @@ header nav div .navbar-toggler-icon {
   background-image: url(../img/menu.png);
 }
 
-/*
-Antes de la animacion
-.navbar-nav{
-    .nav-link {
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-size: 16px;
-        margin: 5px 10px;  
-        &:hover {
-            color: map.get(mapa.$colores,color-subrayado);
-        }
-    }
-    .activo {
-        color: map.get(mapa.$colores,color-subrayado);
-    }    
-}
-*/
 /* FIN HEADER */
 /* FOOTER */
 footer {
@@ -163,16 +189,25 @@ footer .container .row .footer .columna .boton-news {
   width: 100%;
   padding: 5px 15px;
   font-size: 16px;
-  color: #ffffff;
-  background: #502899;
-  border: 2px solid #502899;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 footer .container .row .footer .columna .boton-news:hover {
-  background: rgba(80, 40, 153, 0.3764705882);
-  color: #ffffff;
+  background-color: rgba(80, 40, 153, 0.5725490196);
+}
+footer .container .row .footer .columna .boton-news:hover::before {
+  width: 100%;
+}
+footer .container .row .footer .columna .boton-news:hover::after {
+  height: 100%;
+}
+footer .container .row .footer .columna .boton-news::before {
+  width: 0;
+  height: 100%;
+  border-width: 2px 0 2px 0;
+}
+footer .container .row .footer .columna .boton-news::after {
+  width: 100%;
+  height: 0;
+  border-width: 0 2px 0 2px;
 }
 footer .container .row .footer .copyright {
   display: flex;
@@ -220,6 +255,14 @@ main section .row .col .grillaIndex .columna-3 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+}
+main section .row .col .grillaIndex .columna-3:hover img {
+  transform: scale(1.1);
+}
+main section .row .col .grillaIndex .columna-3 img {
+  transition: transform 0.6s;
 }
 main section .row .col .grillaIndex .columna-3 p {
   position: absolute;
@@ -270,6 +313,14 @@ main .promociones-destacadas .row .columna-Promociones {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
+}
+main .promociones-destacadas .row .columna-Promociones .contenedorimagenPromociones img {
+  transition: transform 0.6s;
+  display: block;
+}
+main .promociones-destacadas .row .columna-Promociones:hover .contenedorimagenPromociones img {
+  transform: scale(1.1);
 }
 main .promociones-destacadas .row .columna-Promociones .mas-info {
   position: absolute;
@@ -292,52 +343,29 @@ main .promociones-destacadas .row .columna-Promociones p {
 }
 
 #BotonMasInfo {
+  padding: 5px 7px;
   margin: 5px 10px;
 }
 #BotonMasInfo:hover {
   background-color: rgba(80, 40, 153, 0.5725490196);
 }
+#BotonMasInfo:hover::before {
+  width: 100%;
+}
+#BotonMasInfo:hover::after {
+  height: 100%;
+}
+#BotonMasInfo::before {
+  width: 0;
+  height: 100%;
+  border-width: 2px 0 2px 0;
+}
+#BotonMasInfo::after {
+  width: 100%;
+  height: 0;
+  border-width: 0 2px 0 2px;
+}
 
-/*
-main{
-    section{
-        .row{
-            .col{
-                .grillaIndex {
-                    display: grid;
-                    /* mixin 
-                    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
-                    gap: 20px;
-                    div{
-                        img{
-                            @extend %EstiloImg;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-*/
-/*
-.columna-3 {
-    position: relative;
-    @include mixin.flex-center(flex,center,center);
-    flex-direction: column;
-    img {
-        @extend %EstiloImg;
-    }
-        p {
-        position: absolute;
-        color: white;
-        @include mixin.texto-uppercase(uppercase,600);
-        font-size: 24px;
-        }
-    .mas-info {
-        @include mixin.mas-info(absolute,15px);    
-    }
-}
-*/
 /* FIN DE MAIN */
 /* DESTINOS */
 main .destinos .row .columna-3-destinos {
@@ -346,6 +374,13 @@ main .destinos .row .columna-3-destinos {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+main .destinos .row .columna-3-destinos .contenedorimagenDestinos:hover img {
+  transform: scale(1.1);
+}
+main .destinos .row .columna-3-destinos .contenedorimagenDestinos img {
+  transition: transform 0.6s;
+  display: block;
 }
 main .destinos .row .columna-3-destinos p {
   position: absolute;
@@ -373,6 +408,14 @@ main .destinos .row .columna-destinos .grilla-destinos .caja {
   align-items: center;
   flex-direction: column;
   margin: 10px 0;
+  border-radius: 20px;
+}
+main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas:hover img {
+  transform: scale(1.1);
+}
+main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas img {
+  transition: transform 0.6s;
+  display: block;
 }
 main .destinos .row .columna-destinos .grilla-destinos .caja p {
   font-family: "Montserrat", sans-serif;
@@ -392,11 +435,6 @@ main .destinos .row .columna-destinos p {
 
 /* FIN DESTINO */
 /* PROMOCIONES */
-/*
-.columna-2 {
-    margin: 20px;
-}
-*/
 section .grilla-promociones {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
@@ -410,6 +448,10 @@ section .grilla-promociones div {
   display: flex;
   justify-content: center;
 }
+section .grilla-promociones div .contenedorimagenPromociones img {
+  transition: transform 0.6s;
+  display: block;
+}
 section .grilla-promociones div p {
   width: auto;
   position: absolute;
@@ -422,6 +464,10 @@ section .grilla-promociones div .mas-info {
   position: absolute;
   bottom: 20px;
 }
+section .grilla-promociones div:hover .contenedorimagenPromociones img {
+  transform: scale(1.1);
+}
+
 /* FIN PROMOCIONES */
 /* CONTACTO */
 main section .row .col form {
@@ -460,14 +506,26 @@ main section .row .col form .boton-enviar {
   padding: 12px 35px;
   font-size: 16px;
   font-weight: 600;
-  color: #502899;
-  background: transparent;
-  border: 2px solid #502899;
-  border-radius: 5px;
 }
 main section .row .col form .boton-enviar:hover {
-  background: #502899;
-  color: #ffffff;
+  background-color: rgba(80, 40, 153, 0.5725490196);
+  color: #502899;
+}
+main section .row .col form .boton-enviar:hover::before {
+  width: 100%;
+}
+main section .row .col form .boton-enviar:hover::after {
+  height: 100%;
+}
+main section .row .col form .boton-enviar::before {
+  width: 0;
+  height: 100%;
+  border-width: 2px 0 2px 0;
+}
+main section .row .col form .boton-enviar::after {
+  width: 100%;
+  height: 0;
+  border-width: 0 2px 0 2px;
 }
 main section .row .columna-mapa {
   display: flex;
@@ -531,6 +589,7 @@ main section .row .columna-mapa .mapa iframe {
 }
 /* 360 a 480pxmobile */
 @media (max-width: 480px) {
+  /* header */
   main section .row .col .grillaIndex {
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(1, 1fr);

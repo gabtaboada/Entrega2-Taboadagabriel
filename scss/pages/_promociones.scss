@@ -3,23 +3,29 @@
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
 @use '../utilities/extend';
+@use '../utilities/variables';
 
-/*
-.columna-2 {
-    margin: 20px;
-}
-*/
-section{
+section {
     .grilla-promociones {
         display: grid;
-        @include mixin.grid-Rows-Columna(1,1fr,3,1fr);
+        @include mixin.grid-Rows-Columna(1, 1fr, 3, 1fr);
         gap: 20px;
         justify-content: center;
         align-content: center;
+
         div {
             position: relative;
             display: flex;
             justify-content: center;
+
+            .contenedorimagenPromociones {
+                @extend %TransicionesImagenes;
+                img {
+                    @extend %EstiloImg;
+                    transition: transform variables.$speed-scale-img;
+                    display: block;
+                }
+            }
             p {
                 width: auto;
                 position: absolute;
@@ -28,14 +34,25 @@ section{
                 font-size: 24px;
                 text-transform: uppercase;
             }
+
             .mas-info {
-                @include mixin.mas-info(absolute,20px);                
+                @include mixin.mas-info(absolute, 20px);
             }
+
+            &:hover {
+                .contenedorimagenPromociones {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+
+            }
+
+
         }
-        img {
-            @extend %EstiloImg;
-        }
-    }   
+
+
+    }
 }
 
 /* FIN PROMOCIONES */

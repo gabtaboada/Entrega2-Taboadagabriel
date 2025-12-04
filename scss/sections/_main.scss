@@ -1,121 +1,156 @@
 /* MAIN */
-//@use '../utilities/variables';
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
 @use '../utilities/mixin';
 @use '../utilities/extend';
+@use '../utilities/variables';
 
 
-
-main{
+main {
     .banner {
         margin-bottom: 20px;
         position: relative;
-            img {
+
+        img {
             width: 100%;
             z-index: 0;
         }
     }
-    section{
+
+    section {
         .titulo {
-            @include mixin.flex-center(flex,center,center);
+            @include mixin.flex-center(flex, center, center);
             margin: 20px 0;
         }
-        .row{
-            .col{
-                p{
+
+        .row {
+            .col {
+                p {
                     margin: 20px 0;
                 }
+
                 //carousel
                 .grillaIndex {
                     display: grid;
-                    /* mixin */ 
-                    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
+                    /* mixin */
+                    @include mixin.grid-Rows-Columna(2, 1fr, 3, 1fr);
                     gap: 20px;
-                    div{
-                        img{
-                            @extend %EstiloImg;
-                        }
-                    }
+
                     .columna-3 {
                         position: relative;
-                        @include mixin.flex-center(flex,center,center);
+                        @include mixin.flex-center(flex, center, center);
                         flex-direction: column;
+                        overflow: hidden;
+                        border-radius: variables.$Img-border-radius;
+
+                        &:hover {
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+
                         img {
                             @extend %EstiloImg;
+                            transition: transform variables.$speed-scale-img;
                         }
-                            p {
+
+                        p {
                             position: absolute;
                             color: white;
-                            @include mixin.texto-uppercase(uppercase,600);
+                            @include mixin.texto-uppercase(uppercase, 600);
                             font-size: 24px;
-                            }
+                        }
+
                         .mas-info {
-                            @include mixin.mas-info(absolute,15px);    
+                            @include mixin.mas-info(absolute, 15px);
                         }
                     }
-                }                
-                .carousel{
+                }
+
+                .carousel {
                     .carousel-indicators [data-bs-slide-to] {
                         width: 12px;
                         height: 12px;
                         border-radius: 50%;
                         margin: 0 5px;
-                        background-color: map.get(mapa.$colores,color-terciario);
+                        background-color: map.get(mapa.$colores, color-terciario);
+
                         &:hover {
-                            background-color: map.get(mapa.$colores,color-carousel-button-hover);
+                            background-color: map.get(mapa.$colores, color-carousel-button-hover);
                         }
                     }
+
                     .carousel-control-prev {
-                        color: map.get(mapa.$colores,color-carousel-control-prev);
-                        .carousel-icono-anterior{
-                            img{
-                                width: 40px; 
-                            }
-                        }
-                    }
-                    .carousel-control-next{    
-                        .carousel-icono-siguiente{
-                            img{
+                        color: map.get(mapa.$colores, color-carousel-control-prev);
+
+                        .carousel-icono-anterior {
+                            img {
                                 width: 40px;
                             }
                         }
-                    }                    
+                    }
+
+                    .carousel-control-next {
+                        .carousel-icono-siguiente {
+                            img {
+                                width: 40px;
+                            }
+                        }
+                    }
                 }
             }
+
             .nosotros {
                 .columna-1 {
                     width: 100%;
                     margin: 20px;
-                    @include mixin.flex-center(flex,center,center);
+                    @include mixin.flex-center(flex, center, center);
                     flex-direction: column;
                 }
+
                 h3 {
                     text-transform: uppercase;
                 }
-                p{
+
+                p {
                     margin: 10px 0;
                 }
-            } 
+            }
         }
     }
-    .promociones-destacadas{
-        .row{
+
+    .promociones-destacadas {
+        .row {
             .columna-Promociones {
                 position: relative;
-                @include mixin.flex-center(flex,center,center);
-                img {
-                    @extend %EstiloImg;
-                }
-                
+                @include mixin.flex-center(flex, center, center);
+                border-radius: variables.$Img-border-radius;
+                //
+                .contenedorimagenPromociones {
+                    @extend %TransicionesImagenes;
+                    img {
+                        @extend %EstiloImg;
+                        transition: transform variables.$speed-scale-img;
+                        display: block;
+                    }
+                }  
+                &:hover {
+                    .contenedorimagenPromociones {
+                        img {
+                            transform: scale(1.1);
+                        }
+                    }
+
+                }             
                 .mas-info {
-                    @include mixin.mas-info(absolute,15px);
+                    @include mixin.mas-info(absolute, 15px);
                 }
+
                 p {
                     position: absolute;
                     color: white;
                     top: 10px;
-                    @include mixin.texto-uppercase(uppercase,400);
+                    @include mixin.texto-uppercase(uppercase, 400);
                     font-size: 18px;
                     z-index: 2;
                     margin: 5px 0;
@@ -128,55 +163,38 @@ main{
 
 
 .carousel-control-prev-icon {
-    color: map.get(mapa.$colores,color-terciario);
+    color: map.get(mapa.$colores, color-terciario);
 }
 
 #BotonMasInfo {
     @extend %Boton-mas-info;
+    padding: 5px 7px;
     margin: 5px 10px;
-    &:hover {
-        background-color: map.get(mapa.$colores,color-botonInfo-hover);
+
+    &:hover {//posiciono el borde
+        background-color: map.get(mapa.$colores, color-botonInfo-hover);
+        &::before {
+            width: 100%;
+        }
+        &::after {
+            height: 100%;
+        }
+    }
+    ////////
+    &::before {
+        @extend %TransicionBotones;
+        width: 0;
+        height: 100%;
+        border-width: 2px 0 2px 0;
+
+    }
+    &::after {
+        @extend %TransicionBotones;
+        width: 100%;
+        height: 0;
+        border-width: 0 2px 0 2px;
     }
 }
 
-/*
-main{
-    section{
-        .row{
-            .col{
-                .grillaIndex {
-                    display: grid;
-                    /* mixin 
-                    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
-                    gap: 20px;
-                    div{
-                        img{
-                            @extend %EstiloImg;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-*/
-/*
-.columna-3 {
-    position: relative;
-    @include mixin.flex-center(flex,center,center);
-    flex-direction: column;
-    img {
-        @extend %EstiloImg;
-    }
-        p {
-        position: absolute;
-        color: white;
-        @include mixin.texto-uppercase(uppercase,600);
-        font-size: 24px;
-        }
-    .mas-info {
-        @include mixin.mas-info(absolute,15px);    
-    }
-}
-*/
+
 /* FIN DE MAIN */

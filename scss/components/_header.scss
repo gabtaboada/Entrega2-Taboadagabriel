@@ -2,7 +2,7 @@
 @use 'sass:map';
 @use '../utilities/maps' as mapa;
 @use '../utilities/mixin';
-
+@use '../utilities/variables';
 header {
     padding: 20px;
     background-color: map.get(mapa.$colores, color-background-header);
@@ -16,30 +16,35 @@ header {
                 width: 150px;
             }   
             div{
+                ///////////
                 .navbar-nav{
                     .nav-link {
-                        position: relative; // Importante para posicionar el ::after
-                        font-weight: 700;
-                        letter-spacing: 1px;
-                        font-size: 16px;
-                        margin: 5px 10px;
-                        
-                        // Pseudo-elemento para el subrayado animado
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            bottom: 5px;
-                            left: 0;
-                            width: 0;
-                            height: 2px; // Grosor del subrayado
-                            background-color: map.get(mapa.$colores, color-subrayado);
-                            transition: width 0.3s ease; // Velocidad de la animación
+                        padding: 5px;                        
+                      //  Aplico el efecto al span interno
+                        span {
+                            position: relative;
+                            display: inline-block;
+                            font-weight: 700;
+                            letter-spacing: 1px;
+                            font-size: 16px;
+                            margin: 5px 10px;
+                            font-family: variables.$fuentes;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 0;
+                                height: 2px;
+                                background-color: map.get(mapa.$colores, color-subrayado);
+                                transition: width 0.5s ease;
+                            }
                         }
+                        
                         &:hover {
                             color: map.get(mapa.$colores, color-subrayado);
                             
-                            // Expande el subrayado al 100%
-                            &::after {
+                            span::after {
                                 width: 100%;
                             }
                         }
@@ -47,8 +52,10 @@ header {
                     
                     .activo {
                         color: map.get(mapa.$colores, color-subrayado);
+                        transition:none;
                     }    
                 }
+/// 
             }  
             .navbar-toggler {
                     &:focus {
@@ -64,23 +71,4 @@ header {
         }
     }
 }
-
-/*
-Antes de la animacion
-.navbar-nav{
-    .nav-link {
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-size: 16px;
-        margin: 5px 10px;  
-        &:hover {
-            color: map.get(mapa.$colores,color-subrayado);
-        }
-    }
-    .activo {
-        color: map.get(mapa.$colores,color-subrayado);
-    }    
-}
-*/
-
 /* FIN HEADER */
