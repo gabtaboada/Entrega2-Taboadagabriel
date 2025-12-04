@@ -4,10 +4,19 @@
 @use '../utilities/mixin';
 
 @media (max-width: 991px) {
-    .grillaIndex {
-        @include mixin.grid-Rows-Columna(3,1fr,2,1fr);
-        gap: 20px;
+    main{
+        section{
+            .row{
+                .col{
+                    .grillaIndex {
+                        @include mixin.grid-Rows-Columna(3,1fr,2,1fr);
+                        gap: 20px;
+                    }
+                }
+            }
+        }
     }
+
     footer{
         .container{
             .row{
@@ -31,13 +40,21 @@
     }
 
     /*DESTINOS*/
-    .destinos{
-        .grilla-destinos {
-                @include mixin.grid-Rows-Columna(3,1fr,1,1fr);
-                img {
-                    width: 100%;
+    main{
+        .destinos{
+            .row{
+                .columna-destinos{
+                    .grilla-destinos {
+                            @include mixin.grid-Rows-Columna(3,1fr,1,1fr);
+                            img {
+                                width: 100%;
+                            }
+                    }    
                 }
-        }        
+
+            }
+    
+        }
     }
 
     /* CONTACTO*/
@@ -58,17 +75,20 @@
 
 /* 360 a 480pxmobile */
 @media (max-width:480px) {
-    .grillaIndex {
-        @include mixin.grid-Rows-Columna(6,1fr,1,1fr);
-    }
-    /*DESTINOS*/
-    .destinos{
-        .grilla-destinos{
-            img{
-                width: 100%;
+    main{
+        section{
+            .row{
+                .col{
+                    .grillaIndex {
+                        @include mixin.grid-Rows-Columna(6,1fr,1,1fr);
+                    }
+                }
             }
         }
     }
+
+    /*DESTINOS*/
+
     /*PROMOCIONES*/
     section{
         .grilla-promociones {

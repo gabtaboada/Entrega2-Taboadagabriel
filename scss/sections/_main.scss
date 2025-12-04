@@ -6,15 +6,16 @@
 @use '../utilities/extend';
 
 
-.banner {
-    margin-bottom: 20px;
-    position: relative;
-        img {
-        width: 100%;
-        z-index: 0;
-    }
-}
+
 main{
+    .banner {
+        margin-bottom: 20px;
+        position: relative;
+            img {
+            width: 100%;
+            z-index: 0;
+        }
+    }
     section{
         .titulo {
             @include mixin.flex-center(flex,center,center);
@@ -25,8 +26,70 @@ main{
                 p{
                     margin: 20px 0;
                 }
+                //carousel
+                .grillaIndex {
+                    display: grid;
+                    /* mixin */ 
+                    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
+                    gap: 20px;
+                    div{
+                        img{
+                            @extend %EstiloImg;
+                        }
+                    }
+                    .columna-3 {
+                        position: relative;
+                        @include mixin.flex-center(flex,center,center);
+                        flex-direction: column;
+                        img {
+                            @extend %EstiloImg;
+                        }
+                            p {
+                            position: absolute;
+                            color: white;
+                            @include mixin.texto-uppercase(uppercase,600);
+                            font-size: 24px;
+                            }
+                        .mas-info {
+                            @include mixin.mas-info(absolute,15px);    
+                        }
+                    }
+                }                
+                .carousel{
+                    .carousel-indicators [data-bs-slide-to] {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        margin: 0 5px;
+                        background-color: map.get(mapa.$colores,color-terciario);
+                        &:hover {
+                            background-color: map.get(mapa.$colores,color-carousel-button-hover);
+                        }
+                    }
+                    .carousel-control-prev {
+                        color: map.get(mapa.$colores,color-carousel-control-prev);
+                        .carousel-icono-anterior{
+                            img{
+                                width: 40px; 
+                            }
+                        }
+                    }
+                    .carousel-control-next{    
+                        .carousel-icono-siguiente{
+                            img{
+                                width: 40px;
+                            }
+                        }
+                    }                    
+                }
             }
             .nosotros {
+                .columna-1 {
+                    width: 100%;
+                    margin: 20px;
+                    @include mixin.flex-center(flex,center,center);
+                    flex-direction: column;
+                }
                 h3 {
                     text-transform: uppercase;
                 }
@@ -62,37 +125,10 @@ main{
         }
     }
 }
-.columna-1 {
-    width: 100%;
-    margin: 20px;
-    @include mixin.flex-center(flex,center,center);
-    flex-direction: column;
-}
 
-.carousel-indicators [data-bs-slide-to] {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin: 0 5px;
-    background-color: map.get(mapa.$colores,color-terciario);
-    &:hover {
-        background-color: map.get(mapa.$colores,color-carousel-button-hover);
-    }
-}
 
-.carousel-control-prev {
-    color: map.get(mapa.$colores,color-carousel-control-prev);
-}
 .carousel-control-prev-icon {
     color: map.get(mapa.$colores,color-terciario);
-}
-
-.carousel-icono-anterior img {
-    width: 40px;
-}
-
-.carousel-icono-siguiente img {
-    width: 40px;
 }
 
 #BotonMasInfo {
@@ -103,18 +139,28 @@ main{
     }
 }
 
-.grillaIndex {
-    display: grid;
-    /* mixin */ 
-    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
-    gap: 20px;
-    div{
-        img{
-            @extend %EstiloImg;
+/*
+main{
+    section{
+        .row{
+            .col{
+                .grillaIndex {
+                    display: grid;
+                    /* mixin 
+                    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
+                    gap: 20px;
+                    div{
+                        img{
+                            @extend %EstiloImg;
+                        }
+                    }
+                }
+            }
         }
     }
 }
-
+*/
+/*
 .columna-3 {
     position: relative;
     @include mixin.flex-center(flex,center,center);
@@ -132,5 +178,5 @@ main{
         @include mixin.mas-info(absolute,15px);    
     }
 }
-
+*/
 /* FIN DE MAIN */

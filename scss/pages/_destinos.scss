@@ -3,38 +3,63 @@
 @use '../utilities/variables';
 @use '../utilities/extend';
 
-.destinos {
-    .grilla-destinos {
-        @include mixin.flex-center(grid, center, center);
-        @include mixin.grid-Rows-Columna(1, 1fr, 3, 1fr);
-        gap: 20px;
+main{
+    .destinos {
+        .row{
+            .columna-3-destinos{
+                position: relative;
+                @include mixin.flex-center(flex,center,center);
+                flex-direction: column;
+                img {
+                    @extend %EstiloImg;
+                }
+                    p {
+                    position: absolute;
+                    color: white;
+                    @include mixin.texto-uppercase(uppercase,600);
+                    font-size: 24px;
+                    }
+                .mas-info {
+                    @include mixin.mas-info(absolute,15px);    
+                }                
+            }
+            .columna-destinos{
+                .grilla-destinos {
+                    @include mixin.flex-center(grid, center, center);
+                    @include mixin.grid-Rows-Columna(1, 1fr, 3, 1fr);
+                    gap: 20px;
 
-        img {
-            @extend %EstiloImg;
-        }
+                    img {
+                        @extend %EstiloImg;
+                    }
 
-        .caja {
-            width: 100%;
-            @include mixin.flex-center(flex, center, center);
-            flex-direction: column;
-            margin: 10px 0;
-            p {
-                font-family: variables.$fuentes;
-                @include mixin.texto-uppercase(uppercase, 400);
+                    .caja {
+                        width: 100%;
+                        @include mixin.flex-center(flex, center, center);
+                        flex-direction: column;
+                        margin: 10px 0;
+                        p {
+                            font-family: variables.$fuentes;
+                            @include mixin.texto-uppercase(uppercase, 600);
+                        }
+                    }
+                }
+
+                h5 {
+                    font-family: variables.$fuentes;
+                    @include mixin.texto-uppercase(uppercase, 600);
+                }
+
+                p {
+                    font-family: variables.$fuentes;
+                    margin: 10px 0;
+                    padding: 5px;
+                }
             }
         }
+
     }
 
-    h5 {
-        font-family: variables.$fuentes;
-        @include mixin.texto-uppercase(uppercase, 600);
-    }
-
-    p {
-        font-family: variables.$fuentes;
-        margin: 10px 0;
-        padding: 5px;
-    }
 }
 
 

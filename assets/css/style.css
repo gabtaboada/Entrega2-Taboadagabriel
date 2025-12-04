@@ -29,7 +29,7 @@ h1, h2, h5 {
   padding: 5px;
 }
 
-section .grilla-promociones img, .destinos .grilla-destinos img, main .promociones-destacadas .row .columna-Promociones img, .grillaIndex div img, .columna-3 img {
+section .grilla-promociones img, main .destinos .row .columna-3-destinos img, main .destinos .row .columna-destinos .grilla-destinos img, main section .row .col .grillaIndex div img, main section .row .col .grillaIndex .columna-3 img, main .promociones-destacadas .row .columna-Promociones img {
   padding: 5px;
   width: 100%;
   border-radius: 10px;
@@ -190,15 +190,14 @@ footer .container .row .footer .copyright p {
 
 /* FIN FOOTER */
 /* MAIN */
-.banner {
+main .banner {
   margin-bottom: 20px;
   position: relative;
 }
-.banner img {
+main .banner img {
   width: 100%;
   z-index: 0;
 }
-
 main section .titulo {
   display: flex;
   justify-content: center;
@@ -207,6 +206,58 @@ main section .titulo {
 }
 main section .row .col p {
   margin: 20px 0;
+}
+main section .row .col .grillaIndex {
+  display: grid;
+  /* mixin */
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+main section .row .col .grillaIndex .columna-3 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main section .row .col .grillaIndex .columna-3 p {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
+}
+main section .row .col .grillaIndex .columna-3 .mas-info {
+  position: absolute;
+  bottom: 15px;
+}
+main section .row .col .carousel .carousel-indicators [data-bs-slide-to] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: #502899;
+}
+main section .row .col .carousel .carousel-indicators [data-bs-slide-to]:hover {
+  background-color: #7946d7;
+}
+main section .row .col .carousel .carousel-control-prev {
+  color: #4d0945;
+}
+main section .row .col .carousel .carousel-control-prev .carousel-icono-anterior img {
+  width: 40px;
+}
+main section .row .col .carousel .carousel-control-next .carousel-icono-siguiente img {
+  width: 40px;
+}
+main section .row .nosotros .columna-1 {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 main section .row .nosotros h3 {
   text-transform: uppercase;
@@ -236,40 +287,8 @@ main .promociones-destacadas .row .columna-Promociones p {
   padding: 5px;
 }
 
-.columna-1 {
-  width: 100%;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.carousel-indicators [data-bs-slide-to] {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin: 0 5px;
-  background-color: #502899;
-}
-.carousel-indicators [data-bs-slide-to]:hover {
-  background-color: #7946d7;
-}
-
-.carousel-control-prev {
-  color: #4d0945;
-}
-
 .carousel-control-prev-icon {
   color: #502899;
-}
-
-.carousel-icono-anterior img {
-  width: 40px;
-}
-
-.carousel-icono-siguiente img {
-  width: 40px;
 }
 
 #BotonMasInfo {
@@ -279,35 +298,67 @@ main .promociones-destacadas .row .columna-Promociones p {
   background-color: rgba(80, 40, 153, 0.5725490196);
 }
 
-.grillaIndex {
-  display: grid;
-  /* mixin */
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+/*
+main{
+    section{
+        .row{
+            .col{
+                .grillaIndex {
+                    display: grid;
+                    /* mixin 
+                    @include mixin.grid-Rows-Columna(2,1fr,3,1fr);
+                    gap: 20px;
+                    div{
+                        img{
+                            @extend %EstiloImg;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+*/
+/*
 .columna-3 {
+    position: relative;
+    @include mixin.flex-center(flex,center,center);
+    flex-direction: column;
+    img {
+        @extend %EstiloImg;
+    }
+        p {
+        position: absolute;
+        color: white;
+        @include mixin.texto-uppercase(uppercase,600);
+        font-size: 24px;
+        }
+    .mas-info {
+        @include mixin.mas-info(absolute,15px);    
+    }
+}
+*/
+/* FIN DE MAIN */
+/* DESTINOS */
+main .destinos .row .columna-3-destinos {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.columna-3 p {
+main .destinos .row .columna-3-destinos p {
   position: absolute;
   color: white;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 24px;
 }
-.columna-3 .mas-info {
+main .destinos .row .columna-3-destinos .mas-info {
   position: absolute;
   bottom: 15px;
 }
-
-/* FIN DE MAIN */
-/* DESTINOS */
-.destinos .grilla-destinos {
+main .destinos .row .columna-destinos .grilla-destinos {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -315,7 +366,7 @@ main .promociones-destacadas .row .columna-Promociones p {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
-.destinos .grilla-destinos .caja {
+main .destinos .row .columna-destinos .grilla-destinos .caja {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -323,17 +374,17 @@ main .promociones-destacadas .row .columna-Promociones p {
   flex-direction: column;
   margin: 10px 0;
 }
-.destinos .grilla-destinos .caja p {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-.destinos h5 {
+main .destinos .row .columna-destinos .grilla-destinos .caja p {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
 }
-.destinos p {
+main .destinos .row .columna-destinos h5 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+main .destinos .row .columna-destinos p {
   font-family: "Montserrat", sans-serif;
   margin: 10px 0;
   padding: 5px;
@@ -341,10 +392,11 @@ main .promociones-destacadas .row .columna-Promociones p {
 
 /* FIN DESTINO */
 /* PROMOCIONES */
+/*
 .columna-2 {
-  margin: 20px;
+    margin: 20px;
 }
-
+*/
 section .grilla-promociones {
   display: grid;
   grid-template-rows: repeat(1, 1fr);
@@ -430,8 +482,7 @@ main section .row .columna-mapa div {
 main section .row .columna-mapa div p {
   margin: 5px 0;
 }
-
-.mapa iframe {
+main section .row .columna-mapa .mapa iframe {
   width: 100%;
   height: 300px;
 }
@@ -439,7 +490,7 @@ main section .row .columna-mapa div p {
 /* FIN CONTACTO */
 /*DESKTOP FIRST*/
 @media (max-width: 991px) {
-  .grillaIndex {
+  main section .row .col .grillaIndex {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -458,11 +509,11 @@ main section .row .columna-mapa div p {
     font-size: 24px;
   }
   /*DESTINOS*/
-  .destinos .grilla-destinos {
+  main .destinos .row .columna-destinos .grilla-destinos {
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(1, 1fr);
   }
-  .destinos .grilla-destinos img {
+  main .destinos .row .columna-destinos .grilla-destinos img {
     width: 100%;
   }
   /* CONTACTO*/
@@ -480,14 +531,11 @@ main section .row .columna-mapa div p {
 }
 /* 360 a 480pxmobile */
 @media (max-width: 480px) {
-  .grillaIndex {
+  main section .row .col .grillaIndex {
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(1, 1fr);
   }
   /*DESTINOS*/
-  .destinos .grilla-destinos img {
-    width: 100%;
-  }
   /*PROMOCIONES*/
   section .grilla-promociones {
     grid-template-rows: repeat(3, 1fr);
