@@ -135,7 +135,7 @@ header nav div .navbar-toggler:focus {
   border-color: rgba(77, 9, 69, 0.1607843137);
 }
 header nav div .navbar-toggler-icon {
-  background-image: url(../img/menu.png);
+  background-image: url(../img/menu.webp);
 }
 
 /* FIN HEADER */
@@ -464,8 +464,16 @@ section .grilla-promociones div .mas-info {
   position: absolute;
   bottom: 20px;
 }
-section .grilla-promociones div:hover .contenedorimagenPromociones img {
+section .grilla-promociones div:hover {
+  /*
+  .contenedorimagenPromociones 
+  {*/
+}
+section .grilla-promociones div:hover img {
   transform: scale(1.1);
+}
+section .grilla-promociones div:hover {
+  /*}*/
 }
 
 /* FIN PROMOCIONES */
