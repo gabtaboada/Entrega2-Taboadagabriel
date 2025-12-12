@@ -1,0 +1,34 @@
+@use 'sass:map';
+@use '../utilities/maps' as mapa;
+@use '../utilities/mixin';
+
+/* NOSOTROS */
+main{
+    .container-nosotros{
+        .row{
+            .nosotros{
+                h2{
+                    text-transform: uppercase;
+                    margin: 10px 0;
+                    font-size: 1.75rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                }
+                .columna-1 {
+                    width: 100%;
+                    margin: 20px;
+                    @include mixin.flex-center(flex, center, center);
+                    flex-direction: column;
+                }
+
+                h3 {
+                    text-transform: uppercase;
+                }
+
+                p {
+                    margin: 10px 0;
+                }                
+            }
+        }
+    }
+}

@@ -95,6 +95,9 @@ main{
             .columna-mapa{
                 @include mixin.flex-center(flex,space-between,normal);
                 flex-direction: column;
+                h2{
+                    font-size: 1.75rem;
+                }
                 div{
                     margin: 5px;
                     padding: 5px 0;

@@ -68,6 +68,17 @@ main {
                 }
 
                 .carousel {
+                    .carousel-inner{
+                        .carousel-item{
+                            .titulo-slider{
+                                margin: 10px 10px;
+                                padding: 5px;
+                                font-size: 1.25rem;
+                                font-weight: 500;
+                                line-height: 1.2;
+                            }
+                        }
+                    }
                     .carousel-indicators [data-bs-slide-to] {
                         width: 12px;
                         height: 12px;
@@ -100,22 +111,22 @@ main {
                 }
             }
 
-            .nosotros {
-                .columna-1 {
-                    width: 100%;
-                    margin: 20px;
-                    @include mixin.flex-center(flex, center, center);
-                    flex-direction: column;
-                }
+            // .nosotros {
+            //     .columna-1 {
+            //         width: 100%;
+            //         margin: 20px;
+            //         @include mixin.flex-center(flex, center, center);
+            //         flex-direction: column;
+            //     }
 
-                h3 {
-                    text-transform: uppercase;
-                }
+            //     h3 {
+            //         text-transform: uppercase;
+            //     }
 
-                p {
-                    margin: 10px 0;
-                }
-            }
+            //     p {
+            //         margin: 10px 0;
+            //     }
+            // }
         }
     }
 

@@ -65,9 +65,10 @@ main{
                         }
                     }
                 }
-                h5 {
+                h2 {
                     font-family: variables.$fuentes;
                     @include mixin.texto-uppercase(uppercase, 600);
+                    font-size: 1.25rem;
                 }
 
                 p {

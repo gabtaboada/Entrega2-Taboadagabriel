@@ -43,7 +43,7 @@ h1, h2, h5 {
 }
 
 h1, h2, h5 {
-  padding: 5px;
+  padding: 5px 0;
 }
 
 section .grilla-promociones div .contenedorimagenPromociones img, main .destinos .row .columna-3-destinos .contenedorimagenDestinos img, main .destinos .row .columna-destinos .grilla-destinos .caja .contenedorimagenEscapadas img, main section .row .col .grillaIndex .columna-3 img, main .promociones-destacadas .row .columna-Promociones .contenedorimagenPromociones img {
@@ -135,7 +135,7 @@ header nav div .navbar-toggler:focus {
   border-color: rgba(77, 9, 69, 0.1607843137);
 }
 header nav div .navbar-toggler-icon {
-  background-image: url(../img/menu.webp);
+  background-image: url(../img/menu.png);
 }
 
 /* FIN HEADER */
@@ -164,6 +164,14 @@ footer .container .row .footer .columna h6 {
   margin: 5px 0;
   font-weight: bold;
   border-bottom: rgba(93, 93, 93, 0.763);
+}
+footer .container .row .footer .columna h3 {
+  padding: 0 5px;
+  margin: 5px 0;
+  font-weight: bold;
+  border-bottom: rgba(93, 93, 93, 0.763);
+  font-size: 1rem;
+  line-height: 1.2;
 }
 footer .container .row .footer .columna .p-footer {
   padding: 0 5px;
@@ -275,6 +283,13 @@ main section .row .col .grillaIndex .columna-3 .mas-info {
   position: absolute;
   bottom: 15px;
 }
+main section .row .col .carousel .carousel-inner .carousel-item .titulo-slider {
+  margin: 10px 10px;
+  padding: 5px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
 main section .row .col .carousel .carousel-indicators [data-bs-slide-to] {
   width: 12px;
   height: 12px;
@@ -293,20 +308,6 @@ main section .row .col .carousel .carousel-control-prev .carousel-icono-anterior
 }
 main section .row .col .carousel .carousel-control-next .carousel-icono-siguiente img {
   width: 40px;
-}
-main section .row .nosotros .columna-1 {
-  width: 100%;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-main section .row .nosotros h3 {
-  text-transform: uppercase;
-}
-main section .row .nosotros p {
-  margin: 10px 0;
 }
 main .promociones-destacadas .row .columna-Promociones {
   position: relative;
@@ -367,6 +368,29 @@ main .promociones-destacadas .row .columna-Promociones p {
 }
 
 /* FIN DE MAIN */
+/* NOSOTROS */
+main .container-nosotros .row .nosotros h2 {
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+main .container-nosotros .row .nosotros .columna-1 {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main .container-nosotros .row .nosotros h3 {
+  text-transform: uppercase;
+}
+main .container-nosotros .row .nosotros p {
+  margin: 10px 0;
+}
+
 /* DESTINOS */
 main .destinos .row .columna-3-destinos {
   position: relative;
@@ -422,10 +446,11 @@ main .destinos .row .columna-destinos .grilla-destinos .caja p {
   text-transform: uppercase;
   font-weight: 600;
 }
-main .destinos .row .columna-destinos h5 {
+main .destinos .row .columna-destinos h2 {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 1.25rem;
 }
 main .destinos .row .columna-destinos p {
   font-family: "Montserrat", sans-serif;
@@ -541,6 +566,9 @@ main section .row .columna-mapa {
   align-items: normal;
   flex-direction: column;
 }
+main section .row .columna-mapa h2 {
+  font-size: 1.75rem;
+}
 main section .row .columna-mapa div {
   margin: 5px;
   padding: 5px 0;
@@ -602,7 +630,13 @@ main section .row .columna-mapa .mapa iframe {
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(1, 1fr);
   }
-  /*DESTINOS*/
+  main {
+    /* NOSOTROS*/
+  }
+  main .container-nosotros .row .nosotros h2 {
+    font-size: 1.5rem;
+  }
+  /*NOSOTROS*/
   /*PROMOCIONES*/
   section .grilla-promociones {
     grid-template-rows: repeat(3, 1fr);

@@ -76,10 +76,6 @@
 /* 360 a 480pxmobile */
 @media (max-width:480px) {
     /* header */
-
-
-
-
     main{
         section{
             .row{
@@ -90,9 +86,19 @@
                 }
             }
         }
+        /* NOSOTROS*/
+        .container-nosotros{
+            .row{
+                .nosotros{
+                    h2{
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }   
     }
 
-    /*DESTINOS*/
+    /*NOSOTROS*/
 
     /*PROMOCIONES*/
     section{
