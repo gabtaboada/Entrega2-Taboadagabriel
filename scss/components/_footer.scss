@@ -16,14 +16,12 @@ footer {
             .footer {
                 @include mixin.flex-center(flex, center, start);
                 flex-direction: row;
-
                 .columna {
                     padding: 10px;
                     margin: 5px;
                     align-items: flex-start;
                     font-size: 14px;
                     margin-left: 10px;
-
                     h6 {
                         padding: 0 5px;
                         margin: 5px 0;
@@ -41,19 +39,16 @@ footer {
                     .p-footer {
                         padding: 0 5px;
                         margin: 5px 0;
-
                         a {
                             text-decoration: none;
                             color: map.get(mapa.$colores, color-secundario);
                         }
-
                         i {
                             color: map.get(mapa.$colores, color-redes);
                             margin-right: 5px;
                             font-size: 16px;
                         }
                     }
-
                     .newsletter {
                         input {
                             margin-top: 10px;
@@ -63,14 +58,11 @@ footer {
                             text-align: center;
                         }
                     }
-
-                    
                     .boton-news {
                         @extend %Boton-mas-info;
                         width: 100%;
                         padding: 5px 15px;
                         font-size: 16px;
-
                         &:hover {//posiciono el borde
                             background-color: map.get(mapa.$colores, color-botonInfo-hover);
                             &::before {
@@ -86,7 +78,6 @@ footer {
                             width: 0;
                             height: 100%;
                             border-width: 2px 0 2px 0;
-
                         }
                         &::after {
                             @extend %TransicionBotones;
@@ -96,10 +87,8 @@ footer {
                         }
                     }
                 }
-
                 .copyright {
                     @include mixin.flex-center(flex, center, center);
-
                     p {
                         margin: 5px;
                         padding: 5px;
@@ -111,8 +100,6 @@ footer {
         }
     }
 }
-
-
 
 
 /* FIN FOOTER */

@@ -10,7 +10,6 @@ main{
                 position: relative;
                 @include mixin.flex-center(flex,center,center);
                 flex-direction: column;
-    
                 .contenedorimagenDestinos {
                     @extend %TransicionesImagenes;
                     &:hover{
@@ -58,7 +57,6 @@ main{
                                 display: block;
                             }
                         }  
-
                         p {
                             font-family: variables.$fuentes;
                             @include mixin.texto-uppercase(uppercase, 600);
@@ -70,7 +68,6 @@ main{
                     @include mixin.texto-uppercase(uppercase, 600);
                     font-size: 1.25rem;
                 }
-
                 p {
                     font-family: variables.$fuentes;
                     margin: 10px 0;
@@ -78,7 +75,6 @@ main{
                 }
             }
         }
-
     }
 
 }

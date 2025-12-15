@@ -7,27 +7,17 @@ main{
     .container-nosotros{
         .row{
             .nosotros{
+                padding: 5px;
                 h2{
                     text-transform: uppercase;
-                    margin: 10px 0;
                     font-size: 1.75rem;
                     font-weight: 500;
                     line-height: 1.2;
+                    margin: 10px 5px 10px 5px;
                 }
-                .columna-1 {
-                    width: 100%;
-                    margin: 20px;
-                    @include mixin.flex-center(flex, center, center);
-                    flex-direction: column;
-                }
-
-                h3 {
-                    text-transform: uppercase;
-                }
-
                 p {
-                    margin: 10px 0;
-                }                
+                    margin: 10px 5px 10px 5px;
+                }
             }
         }
     }

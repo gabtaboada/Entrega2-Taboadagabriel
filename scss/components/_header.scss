@@ -3,6 +3,7 @@
 @use '../utilities/maps' as mapa;
 @use '../utilities/mixin';
 @use '../utilities/variables';
+
 header {
     padding: 20px;
     background-color: map.get(mapa.$colores, color-background-header);
@@ -40,7 +41,6 @@ header {
                                 transition: width 0.5s ease;
                             }
                         }
-                        
                         &:hover {
                             color: map.get(mapa.$colores, color-subrayado);
                             
@@ -49,7 +49,6 @@ header {
                             }
                         }
                     }
-                    
                     .activo {
                         color: map.get(mapa.$colores, color-subrayado);
                         transition:none;
@@ -64,11 +63,11 @@ header {
                 }
                 
             }
-
             .navbar-toggler-icon {
-                background-image: url(../img/menu.png);
+                background-image: url(../img/menu.webp);
             }                     
         }
     }
 }
+
 /* FIN HEADER */

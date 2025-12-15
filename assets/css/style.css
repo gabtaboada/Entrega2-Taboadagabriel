@@ -135,7 +135,7 @@ header nav div .navbar-toggler:focus {
   border-color: rgba(77, 9, 69, 0.1607843137);
 }
 header nav div .navbar-toggler-icon {
-  background-image: url(../img/menu.png);
+  background-image: url(../img/menu.webp);
 }
 
 /* FIN HEADER */
@@ -241,18 +241,18 @@ main .banner img {
   width: 100%;
   z-index: 0;
 }
-main section .titulo {
+main section .row .col p {
+  margin: 10px 10px;
+  padding: 5px;
+}
+main section .row .col .titulo {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
-}
-main section .row .col p {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 main section .row .col .grillaIndex {
   display: grid;
-  /* mixin */
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -309,6 +309,10 @@ main section .row .col .carousel .carousel-control-prev .carousel-icono-anterior
 main section .row .col .carousel .carousel-control-next .carousel-icono-siguiente img {
   width: 40px;
 }
+main .promociones-destacadas .titulo h2 {
+  margin: 10px 10px;
+  padding: 5px;
+}
 main .promociones-destacadas .row .columna-Promociones {
   position: relative;
   display: flex;
@@ -336,6 +340,10 @@ main .promociones-destacadas .row .columna-Promociones p {
   font-size: 18px;
   z-index: 2;
   margin: 5px 0;
+  padding: 5px;
+}
+main .promociones-destacadas p {
+  margin: 10px 10px;
   padding: 5px;
 }
 
@@ -369,26 +377,18 @@ main .promociones-destacadas .row .columna-Promociones p {
 
 /* FIN DE MAIN */
 /* NOSOTROS */
+main .container-nosotros .row .nosotros {
+  padding: 5px;
+}
 main .container-nosotros .row .nosotros h2 {
   text-transform: uppercase;
-  margin: 10px 0;
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1.2;
-}
-main .container-nosotros .row .nosotros .columna-1 {
-  width: 100%;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-main .container-nosotros .row .nosotros h3 {
-  text-transform: uppercase;
+  margin: 10px 5px 10px 5px;
 }
 main .container-nosotros .row .nosotros p {
-  margin: 10px 0;
+  margin: 10px 5px 10px 5px;
 }
 
 /* DESTINOS */
@@ -489,16 +489,8 @@ section .grilla-promociones div .mas-info {
   position: absolute;
   bottom: 20px;
 }
-section .grilla-promociones div:hover {
-  /*
-  .contenedorimagenPromociones 
-  {*/
-}
 section .grilla-promociones div:hover img {
   transform: scale(1.1);
-}
-section .grilla-promociones div:hover {
-  /*}*/
 }
 
 /* FIN PROMOCIONES */
@@ -635,6 +627,12 @@ main section .row .columna-mapa .mapa iframe {
   }
   main .container-nosotros .row .nosotros h2 {
     font-size: 1.5rem;
+    margin: 10px;
+    padding: 5px;
+  }
+  main .container-nosotros .row .nosotros p {
+    margin: 10px;
+    padding: 5px;
   }
   /*NOSOTROS*/
   /*PROMOCIONES*/

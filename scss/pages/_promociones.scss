@@ -12,12 +12,10 @@ section {
         gap: 20px;
         justify-content: center;
         align-content: center;
-
         div {
             position: relative;
             display: flex;
             justify-content: center;
-
             .contenedorimagenPromociones {
                 @extend %TransicionesImagenes;
                 img {
@@ -34,26 +32,15 @@ section {
                 font-size: 24px;
                 text-transform: uppercase;
             }
-
             .mas-info {
                 @include mixin.mas-info(absolute, 20px);
             }
-
             &:hover {
-                /*
-                .contenedorimagenPromociones 
-                {*/
                     img {
                         transform: scale(1.1);
                     }
-                /*}*/
-
             }
-
-
         }
-
-
     }
 }
 
